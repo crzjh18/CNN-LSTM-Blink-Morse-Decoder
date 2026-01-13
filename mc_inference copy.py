@@ -153,6 +153,14 @@ def play_morse_beep(duration_sec: float):
     beep_queue.put((BEEP_FREQ_HZ, DOT_BEEP_MS if is_dot else DASH_BEEP_MS))
 
 
+def speak_unit(duration_sec: float):
+    """Optional spoken feedback for dot/dash when in TTS mode."""
+    if current_audio_mode != "TTS":
+        return
+    is_dot = duration_sec < 0.5
+    speak_text("dot" if is_dot else "dash")
+
+
 def _normalize_for_eval(text: str) -> str:
     # Normalize whitespace/case to reduce trivial mismatches
     return " ".join((text or "").strip().lower().split())
@@ -291,7 +299,7 @@ except Exception as e:
     idx_to_char = {}
 
 # State for Mode Switching
-current_mode = "WORD"  # WORD | CHAR | BUFFER
+current_mode = "WORD"  # WORD | CHAR | BUFFER | LETTERS
 idx_to_label = idx_to_word
 
 def toggle_audio_mode():
@@ -311,6 +319,9 @@ def toggle_mode():
         idx_to_label = idx_to_char
     elif current_mode == "CHAR":
         current_mode = "BUFFER"
+        idx_to_label = idx_to_char
+    elif current_mode == "BUFFER":
+        current_mode = "LETTERS"
         idx_to_label = idx_to_char
     else:
         current_mode = "WORD"
@@ -691,6 +702,7 @@ def main():
                                     current_blink_sequence.append(duration)
                                     print(f"Blink recorded: {duration:.2f}s")
                                     play_morse_beep(duration)
+                                    speak_unit(duration)
 
                                     if current_mode == "BUFFER":
                                         # Build the Morse token without decoding yet
@@ -725,11 +737,13 @@ def main():
                 predicted = predict_letter(current_blink_sequence)
 
                 if predicted and predicted != "?":
-                    if current_mode == "CHAR":
-                        # Build words from letters
+                    if current_mode in ("CHAR", "LETTERS"):
+                        # Build words from letters; speak in LETTERS mode for audible confirmation
                         current_word += predicted
                         decoded_history.append(predicted)
                         print(f"Letter: {predicted}")
+                        if current_mode == "LETTERS":
+                            speak_text(predicted)
                     else:
                         # WORD mode: treat prediction as a full word token
                         transcript_words.append(predicted)

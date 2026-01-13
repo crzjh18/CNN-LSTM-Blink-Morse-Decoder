@@ -1,0 +1,7 @@
+{"ts": 1768322362.4717162, "type": "blink_recorded", "blink_duration_sec": 0.06694197654724121}
+{"ts": 1768322363.8349807, "type": "blink_recorded", "blink_duration_sec": 0.8795125484466553}
+{"ts": 1768322364.8632014, "type": "token_committed", "mode": "LETTERS", "token": "A", "blink_sequence_sec": [0.06694197654724121, 0.8795125484466553], "transcript": "A", "prompt": null}
+{"ts": 1768322365.441792, "type": "blink_recorded", "blink_duration_sec": 0.1251685619354248}
+{"ts": 1768322365.8487446, "type": "blink_recorded", "blink_duration_sec": 0.0713798999786377}
+{"ts": 1768322367.1443136, "type": "blink_recorded", "blink_duration_sec": 0.8488998413085938}
+{"ts": 1768322368.157245, "type": "token_committed", "mode": "LETTERS", "token": "U", "blink_sequence_sec": [0.1251685619354248, 0.0713798999786377, 0.8488998413085938], "transcript": "AU", "prompt": null}

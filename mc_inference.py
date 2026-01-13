@@ -520,7 +520,7 @@ def main():
                 return
             # Fall through to transcript editing if buffer is empty (post-decode edits)
 
-        if current_mode == "CHAR":
+        if current_mode in ("CHAR", "LETTERS"):
             if current_word:
                 current_word = current_word[:-1]
             elif transcript_words:
