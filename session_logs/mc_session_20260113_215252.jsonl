@@ -1,0 +1,29 @@
+{"ts": 1768312381.501477, "type": "blink_recorded", "blink_duration_sec": 0.13417339324951172}
+{"ts": 1768312382.3271253, "type": "blink_recorded", "blink_duration_sec": 0.16774368286132812}
+{"ts": 1768312383.419595, "type": "blink_recorded", "blink_duration_sec": 0.580803394317627}
+{"ts": 1768312384.0684583, "type": "blink_recorded", "blink_duration_sec": 0.07008767127990723}
+{"ts": 1768312385.531551, "type": "blink_recorded", "blink_duration_sec": 0.10063934326171875}
+{"ts": 1768312386.5549922, "type": "token_committed", "mode": "WORD", "token": "Message Delivered", "blink_sequence_sec": [0.13417339324951172, 0.16774368286132812, 0.580803394317627, 0.07008767127990723, 0.10063934326171875], "transcript": "Message Delivered", "prompt": null}
+{"ts": 1768312395.5925443, "type": "blink_recorded", "blink_duration_sec": 0.07208490371704102}
+{"ts": 1768312396.4132068, "type": "blink_recorded", "blink_duration_sec": 0.12467789649963379}
+{"ts": 1768312397.8092153, "type": "blink_recorded", "blink_duration_sec": 0.649052619934082}
+{"ts": 1768312398.8367636, "type": "token_committed", "mode": "CHAR", "token": "U", "blink_sequence_sec": [0.07208490371704102, 0.12467789649963379, 0.649052619934082], "transcript": "U", "prompt": null}
+{"ts": 1768312402.7208865, "type": "blink_recorded", "blink_duration_sec": 0.10437726974487305}
+{"ts": 1768312403.951238, "type": "blink_recorded", "blink_duration_sec": 0.749178409576416}
+{"ts": 1768312404.9556153, "type": "token_committed", "mode": "CHAR", "token": "A", "blink_sequence_sec": [0.10437726974487305, 0.749178409576416], "transcript": "A", "prompt": null}
+{"ts": 1768312406.5749547, "type": "blink_recorded", "blink_duration_sec": 0.17375516891479492}
+{"ts": 1768312407.598883, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.17375516891479492], "transcript": "AE", "prompt": null}
+{"ts": 1768312410.0871499, "type": "blink_recorded", "blink_duration_sec": 0.9201116561889648}
+{"ts": 1768312410.7034898, "type": "blink_recorded", "blink_duration_sec": 0.16521978378295898}
+{"ts": 1768312411.3147721, "type": "blink_recorded", "blink_duration_sec": 0.2373185157775879}
+{"ts": 1768312412.3306186, "type": "token_committed", "mode": "CHAR", "token": "D", "blink_sequence_sec": [0.9201116561889648, 0.16521978378295898, 0.2373185157775879], "transcript": "AD", "prompt": null}
+{"ts": 1768312417.1543381, "type": "blink_recorded", "blink_duration_sec": 0.20423579216003418}
+{"ts": 1768312417.8322816, "type": "blink_recorded", "blink_duration_sec": 0.24035382270812988}
+{"ts": 1768312419.1610885, "type": "blink_recorded", "blink_duration_sec": 0.7149815559387207}
+{"ts": 1768312420.1825004, "type": "token_committed", "mode": "CHAR", "token": "U", "blink_sequence_sec": [0.20423579216003418, 0.24035382270812988, 0.7149815559387207], "transcript": "AU", "prompt": null}
+{"ts": 1768312423.1825538, "type": "blink_recorded", "blink_duration_sec": 0.7505168914794922}
+{"ts": 1768312423.8328722, "type": "blink_recorded", "blink_duration_sec": 0.1386876106262207}
+{"ts": 1768312424.5833619, "type": "blink_recorded", "blink_duration_sec": 0.2958858013153076}
+{"ts": 1768312425.1991584, "type": "blink_recorded", "blink_duration_sec": 0.2047576904296875}
+{"ts": 1768312426.2210343, "type": "token_committed", "mode": "CHAR", "token": "B", "blink_sequence_sec": [0.7505168914794922, 0.1386876106262207, 0.2958858013153076, 0.2047576904296875], "transcript": "AB", "prompt": null}
+{"ts": 1768312430.2431982, "type": "word_boundary_commit", "word": "AB", "mode": "CHAR", "transcript": "AB", "prompt": null}

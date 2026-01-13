@@ -1,0 +1,12 @@
+{"ts": 1768313263.957248, "type": "blink_recorded", "blink_duration_sec": 0.17037630081176758}
+{"ts": 1768313265.152278, "type": "blink_recorded", "blink_duration_sec": 0.7174625396728516}
+{"ts": 1768313266.1585262, "type": "token_committed", "mode": "WORD", "token": "Assignment Completed", "blink_sequence_sec": [0.17037630081176758, 0.7174625396728516], "transcript": "Assignment Completed", "prompt": null}
+{"ts": 1768313267.369621, "type": "blink_recorded", "blink_duration_sec": 0.646425724029541}
+{"ts": 1768313268.085711, "type": "blink_recorded", "blink_duration_sec": 0.20566892623901367}
+{"ts": 1768313268.5972388, "type": "blink_recorded", "blink_duration_sec": 0.1701498031616211}
+{"ts": 1768313269.1787007, "type": "blink_recorded", "blink_duration_sec": 0.18974590301513672}
+{"ts": 1768313270.2010686, "type": "token_committed", "mode": "WORD", "token": "Report To/Meet", "blink_sequence_sec": [0.646425724029541, 0.20566892623901367, 0.1701498031616211, 0.18974590301513672], "transcript": "Assignment Completed Report To/Meet", "prompt": null}
+{"ts": 1768313278.7351713, "type": "blink_recorded", "blink_duration_sec": 0.10199379920959473}
+{"ts": 1768313279.7488158, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.10199379920959473], "transcript": "Assignment Completed Report To/M E", "prompt": null}
+{"ts": 1768313286.2297828, "type": "blink_recorded", "blink_duration_sec": 0.169661283493042}
+{"ts": 1768313287.423901, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.169661283493042], "transcript": "Assignment Completed Report  E", "prompt": null}

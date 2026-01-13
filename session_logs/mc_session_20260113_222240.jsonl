@@ -1,0 +1,220 @@
+{"ts": 1768314163.253547, "type": "blink_recorded", "blink_duration_sec": 0.20465755462646484}
+{"ts": 1768314164.3822012, "type": "blink_recorded", "blink_duration_sec": 0.717836856842041}
+{"ts": 1768314165.3905094, "type": "token_committed", "mode": "WORD", "token": "Assignment Completed", "blink_sequence_sec": [0.20465755462646484, 0.717836856842041], "transcript": "Assignment Completed", "prompt": null}
+{"ts": 1768314166.8026006, "type": "blink_recorded", "blink_duration_sec": 0.5799374580383301}
+{"ts": 1768314167.8263867, "type": "token_committed", "mode": "WORD", "token": "Chase", "blink_sequence_sec": [0.5799374580383301], "transcript": "Assignment Completed Chase", "prompt": null}
+{"ts": 1768314181.2302182, "type": "blink_recorded", "blink_duration_sec": 0.18111515045166016}
+{"ts": 1768314182.2172918, "type": "blink_recorded", "blink_duration_sec": 0.7167356014251709}
+{"ts": 1768314183.2432926, "type": "token_committed", "mode": "LETTERS", "token": "A", "blink_sequence_sec": [0.18111515045166016, 0.7167356014251709], "transcript": "A", "prompt": null}
+{"ts": 1768314185.4248939, "type": "blink_recorded", "blink_duration_sec": 0.7720201015472412}
+{"ts": 1768314186.2439277, "type": "blink_recorded", "blink_duration_sec": 0.22716283798217773}
+{"ts": 1768314186.7898486, "type": "blink_recorded", "blink_duration_sec": 0.17005419731140137}
+{"ts": 1768314187.5441694, "type": "blink_recorded", "blink_duration_sec": 0.27539753913879395}
+{"ts": 1768314188.5629325, "type": "token_committed", "mode": "LETTERS", "token": "B", "blink_sequence_sec": [0.7720201015472412, 0.22716283798217773, 0.17005419731140137, 0.27539753913879395], "transcript": "AB", "prompt": null}
+{"ts": 1768314190.3354764, "type": "blink_recorded", "blink_duration_sec": 0.7833337783813477}
+{"ts": 1768314190.8486006, "type": "blink_recorded", "blink_duration_sec": 0.1358325481414795}
+{"ts": 1768314192.0435328, "type": "blink_recorded", "blink_duration_sec": 0.6880559921264648}
+{"ts": 1768314192.4848564, "type": "blink_recorded", "blink_duration_sec": 0.16007661819458008}
+{"ts": 1768314193.5080576, "type": "token_committed", "mode": "LETTERS", "token": "C", "blink_sequence_sec": [0.7833337783813477, 0.1358325481414795, 0.6880559921264648, 0.16007661819458008], "transcript": "ABC", "prompt": null}
+{"ts": 1768314194.8442547, "type": "blink_recorded", "blink_duration_sec": 0.7505671977996826}
+{"ts": 1768314195.182245, "type": "blink_recorded", "blink_duration_sec": 0.17034196853637695}
+{"ts": 1768314195.6899538, "type": "blink_recorded", "blink_duration_sec": 0.23820734024047852}
+{"ts": 1768314196.7148466, "type": "token_committed", "mode": "LETTERS", "token": "D", "blink_sequence_sec": [0.7505671977996826, 0.17034196853637695, 0.23820734024047852], "transcript": "ABCD", "prompt": null}
+{"ts": 1768314197.0655024, "type": "blink_recorded", "blink_duration_sec": 0.20956158638000488}
+{"ts": 1768314198.08002, "type": "token_committed", "mode": "LETTERS", "token": "E", "blink_sequence_sec": [0.20956158638000488], "transcript": "ABCDE", "prompt": null}
+{"ts": 1768314199.1689994, "type": "blink_recorded", "blink_duration_sec": 0.16997623443603516}
+{"ts": 1768314199.7151294, "type": "blink_recorded", "blink_duration_sec": 0.23784279823303223}
+{"ts": 1768314200.7483044, "type": "blink_recorded", "blink_duration_sec": 0.7159793376922607}
+{"ts": 1768314201.3514962, "type": "blink_recorded", "blink_duration_sec": 0.20393776893615723}
+{"ts": 1768314202.3757317, "type": "token_committed", "mode": "LETTERS", "token": "F", "blink_sequence_sec": [0.16997623443603516, 0.23784279823303223, 0.7159793376922607, 0.20393776893615723], "transcript": "ABCDEF", "prompt": null}
+{"ts": 1768314203.6035018, "type": "blink_recorded", "blink_duration_sec": 0.705575704574585}
+{"ts": 1768314204.797994, "type": "blink_recorded", "blink_duration_sec": 0.7844579219818115}
+{"ts": 1768314205.3436558, "type": "blink_recorded", "blink_duration_sec": 0.17012643814086914}
+{"ts": 1768314206.3655286, "type": "token_committed", "mode": "LETTERS", "token": "G", "blink_sequence_sec": [0.705575704574585, 0.7844579219818115, 0.17012643814086914], "transcript": "ABCDEFG", "prompt": null}
+{"ts": 1768314207.0477178, "type": "blink_recorded", "blink_duration_sec": 0.23765325546264648}
+{"ts": 1768314207.626083, "type": "blink_recorded", "blink_duration_sec": 0.27153587341308594}
+{"ts": 1768314208.2537322, "type": "blink_recorded", "blink_duration_sec": 0.31096577644348145}
+{"ts": 1768314208.9570448, "type": "blink_recorded", "blink_duration_sec": 0.4450840950012207}
+{"ts": 1768314209.9807405, "type": "token_committed", "mode": "LETTERS", "token": "H", "blink_sequence_sec": [0.23765325546264648, 0.27153587341308594, 0.31096577644348145, 0.4450840950012207], "transcript": "ABCDEFGH", "prompt": null}
+{"ts": 1768314210.6727622, "type": "blink_recorded", "blink_duration_sec": 0.21060466766357422}
+{"ts": 1768314211.208544, "type": "blink_recorded", "blink_duration_sec": 0.16837620735168457}
+{"ts": 1768314212.2314105, "type": "token_committed", "mode": "LETTERS", "token": "I", "blink_sequence_sec": [0.21060466766357422, 0.16837620735168457], "transcript": "ABCDEFGHI", "prompt": null}
+{"ts": 1768314213.1957958, "type": "blink_recorded", "blink_duration_sec": 0.2057652473449707}
+{"ts": 1768314214.346154, "type": "blink_recorded", "blink_duration_sec": 0.7495496273040771}
+{"ts": 1768314215.6749427, "type": "blink_recorded", "blink_duration_sec": 0.8867976665496826}
+{"ts": 1768314217.0744553, "type": "blink_recorded", "blink_duration_sec": 0.9985358715057373}
+{"ts": 1768314218.098625, "type": "token_committed", "mode": "LETTERS", "token": "J", "blink_sequence_sec": [0.2057652473449707, 0.7495496273040771, 0.8867976665496826, 0.9985358715057373], "transcript": "ABCDEFGHIJ", "prompt": null}
+{"ts": 1768314219.836173, "type": "blink_recorded", "blink_duration_sec": 0.7797539234161377}
+{"ts": 1768314220.4524927, "type": "blink_recorded", "blink_duration_sec": 0.23802828788757324}
+{"ts": 1768314221.7116284, "type": "blink_recorded", "blink_duration_sec": 0.8176906108856201}
+{"ts": 1768314223.009035, "type": "blink_recorded", "blink_duration_sec": 0.8181090354919434}
+{"ts": 1768314224.0323844, "type": "token_committed", "mode": "LETTERS", "token": "Y", "blink_sequence_sec": [0.7797539234161377, 0.23802828788757324, 0.8176906108856201, 0.8181090354919434], "transcript": "ABCDEFGHIJY", "prompt": null}
+{"ts": 1768314225.292514, "type": "blink_recorded", "blink_duration_sec": 0.20601868629455566}
+{"ts": 1768314226.2500708, "type": "blink_recorded", "blink_duration_sec": 0.614832878112793}
+{"ts": 1768314227.2796795, "type": "token_committed", "mode": "LETTERS", "token": "A", "blink_sequence_sec": [0.20601868629455566, 0.614832878112793], "transcript": "ABCDEFGHIJYA", "prompt": null}
+{"ts": 1768314238.2202666, "type": "blink_recorded", "blink_duration_sec": 0.1376805305480957}
+{"ts": 1768314238.4923835, "type": "blink_recorded", "blink_duration_sec": 0.10012102127075195}
+{"ts": 1768314239.5165625, "type": "token_committed", "mode": "LETTERS", "token": "I", "blink_sequence_sec": [0.1376805305480957, 0.10012102127075195], "transcript": "ABCDEFGHIJYAI", "prompt": null}
+{"ts": 1768314242.6877308, "type": "blink_recorded", "blink_duration_sec": 0.33907556533813477}
+{"ts": 1768314244.1196492, "type": "blink_recorded", "blink_duration_sec": 1.0226707458496094}
+{"ts": 1768314245.1522923, "type": "token_committed", "mode": "LETTERS", "token": "A", "blink_sequence_sec": [0.33907556533813477, 1.0226707458496094], "transcript": "A", "prompt": null}
+{"ts": 1768314247.9055548, "type": "gesture_speak_sentence", "blink_duration_sec": 2.211013078689575, "mode": "LETTERS", "transcript": "A", "prompt": null}
+{"ts": 1768314255.3418112, "type": "blink_recorded", "blink_duration_sec": 0.6929130554199219}
+{"ts": 1768314255.818054, "type": "blink_recorded", "blink_duration_sec": 0.23998785018920898}
+{"ts": 1768314256.3357015, "type": "blink_recorded", "blink_duration_sec": 0.2382514476776123}
+{"ts": 1768314256.842282, "type": "blink_recorded", "blink_duration_sec": 0.23686647415161133}
+{"ts": 1768314257.866005, "type": "token_committed", "mode": "LETTERS", "token": "B", "blink_sequence_sec": [0.6929130554199219, 0.23998785018920898, 0.2382514476776123, 0.23686647415161133], "transcript": "AB", "prompt": null}
+{"ts": 1768314259.1266189, "type": "blink_recorded", "blink_duration_sec": 0.786632776260376}
+{"ts": 1768314259.782082, "type": "blink_recorded", "blink_duration_sec": 0.32247304916381836}
+{"ts": 1768314260.8654788, "type": "blink_recorded", "blink_duration_sec": 0.8145740032196045}
+{"ts": 1768314261.4128716, "type": "blink_recorded", "blink_duration_sec": 0.16812729835510254}
+{"ts": 1768314262.435455, "type": "token_committed", "mode": "LETTERS", "token": "C", "blink_sequence_sec": [0.786632776260376, 0.32247304916381836, 0.8145740032196045, 0.16812729835510254], "transcript": "ABC", "prompt": null}
+{"ts": 1768314263.8330126, "type": "blink_recorded", "blink_duration_sec": 0.8526937961578369}
+{"ts": 1768314264.4808795, "type": "blink_recorded", "blink_duration_sec": 0.2718679904937744}
+{"ts": 1768314264.7882595, "type": "blink_recorded", "blink_duration_sec": 0.06828498840332031}
+{"ts": 1768314265.4022462, "type": "blink_recorded", "blink_duration_sec": 0.47896552085876465}
+{"ts": 1768314266.426007, "type": "token_committed", "mode": "LETTERS", "token": "B", "blink_sequence_sec": [0.8526937961578369, 0.2718679904937744, 0.06828498840332031, 0.47896552085876465], "transcript": "ABCB", "prompt": null}
+{"ts": 1768314271.9161026, "type": "blink_recorded", "blink_duration_sec": 0.19415616989135742}
+{"ts": 1768314273.2469344, "type": "blink_recorded", "blink_duration_sec": 0.9564955234527588}
+{"ts": 1768314275.1902504, "type": "blink_recorded", "blink_duration_sec": 0.9212977886199951}
+{"ts": 1768314277.9181998, "type": "token_committed", "mode": "LETTERS", "token": "W", "blink_sequence_sec": [0.19415616989135742, 0.9564955234527588, 0.9212977886199951], "transcript": "W", "prompt": null}
+{"ts": 1768314281.7433681, "type": "blink_recorded", "blink_duration_sec": 0.27324700355529785}
+{"ts": 1768314283.5807593, "type": "blink_recorded", "blink_duration_sec": 1.571286916732788}
+{"ts": 1768314284.597754, "type": "token_committed", "mode": "LETTERS", "token": "A", "blink_sequence_sec": [0.27324700355529785, 1.571286916732788], "transcript": "A", "prompt": null}
+{"ts": 1768314287.8782082, "type": "gesture_speak_sentence", "blink_duration_sec": 2.592899799346924, "mode": "LETTERS", "transcript": "A", "prompt": null}
+{"ts": 1768314290.7429574, "type": "blink_recorded", "blink_duration_sec": 0.11451959609985352}
+{"ts": 1768314291.7660975, "type": "token_committed", "mode": "LETTERS", "token": "E", "blink_sequence_sec": [0.11451959609985352], "transcript": "AE", "prompt": null}
+{"ts": 1768314301.7930255, "type": "blink_recorded", "blink_duration_sec": 0.6137688159942627}
+{"ts": 1768314302.81626, "type": "token_committed", "mode": "LETTERS", "token": "T", "blink_sequence_sec": [0.6137688159942627], "transcript": "T", "prompt": null}
+{"ts": 1768314311.547169, "type": "blink_recorded", "blink_duration_sec": 0.23866677284240723}
+{"ts": 1768314312.7754385, "type": "blink_recorded", "blink_duration_sec": 0.794377326965332}
+{"ts": 1768314313.7971845, "type": "token_committed", "mode": "LETTERS", "token": "A", "blink_sequence_sec": [0.23866677284240723, 0.794377326965332], "transcript": "A", "prompt": null}
+{"ts": 1768314315.2652652, "type": "blink_recorded", "blink_duration_sec": 0.7856686115264893}
+{"ts": 1768314315.8442872, "type": "blink_recorded", "blink_duration_sec": 0.15128040313720703}
+{"ts": 1768314316.593802, "type": "blink_recorded", "blink_duration_sec": 0.16943645477294922}
+{"ts": 1768314317.208363, "type": "blink_recorded", "blink_duration_sec": 0.23830842971801758}
+{"ts": 1768314318.2308025, "type": "token_committed", "mode": "LETTERS", "token": "B", "blink_sequence_sec": [0.7856686115264893, 0.15128040313720703, 0.16943645477294922, 0.23830842971801758], "transcript": "AB", "prompt": null}
+{"ts": 1768314319.9027128, "type": "blink_recorded", "blink_duration_sec": 0.6796293258666992}
+{"ts": 1768314320.5851169, "type": "blink_recorded", "blink_duration_sec": 0.24965167045593262}
+{"ts": 1768314321.6423762, "type": "blink_recorded", "blink_duration_sec": 0.749382495880127}
+{"ts": 1768314322.119334, "type": "blink_recorded", "blink_duration_sec": 0.170180082321167}
+{"ts": 1768314323.1430092, "type": "token_committed", "mode": "LETTERS", "token": "C", "blink_sequence_sec": [0.6796293258666992, 0.24965167045593262, 0.749382495880127, 0.170180082321167], "transcript": "ABC", "prompt": null}
+{"ts": 1768314324.449502, "type": "blink_recorded", "blink_duration_sec": 0.8181920051574707}
+{"ts": 1768314325.08667, "type": "blink_recorded", "blink_duration_sec": 0.23990345001220703}
+{"ts": 1768314325.461347, "type": "blink_recorded", "blink_duration_sec": 0.17246150970458984}
+{"ts": 1768314326.4951594, "type": "token_committed", "mode": "LETTERS", "token": "D", "blink_sequence_sec": [0.8181920051574707, 0.23990345001220703, 0.17246150970458984], "transcript": "ABCD", "prompt": null}
+{"ts": 1768314327.2382073, "type": "blink_recorded", "blink_duration_sec": 0.3061099052429199}
+{"ts": 1768314328.257893, "type": "token_committed", "mode": "LETTERS", "token": "E", "blink_sequence_sec": [0.3061099052429199], "transcript": "ABCDE", "prompt": null}
+{"ts": 1768314328.9753683, "type": "blink_recorded", "blink_duration_sec": 0.2397313117980957}
+{"ts": 1768314329.4529762, "type": "blink_recorded", "blink_duration_sec": 0.24075102806091309}
+{"ts": 1768314330.5770407, "type": "blink_recorded", "blink_duration_sec": 0.7175271511077881}
+{"ts": 1768314331.0208406, "type": "blink_recorded", "blink_duration_sec": 0.200209379196167}
+{"ts": 1768314332.0442145, "type": "token_committed", "mode": "LETTERS", "token": "F", "blink_sequence_sec": [0.2397313117980957, 0.24075102806091309, 0.7175271511077881, 0.200209379196167], "transcript": "ABCDEF", "prompt": null}
+{"ts": 1768314333.376207, "type": "blink_recorded", "blink_duration_sec": 0.7495622634887695}
+{"ts": 1768314334.6031272, "type": "blink_recorded", "blink_duration_sec": 0.7854220867156982}
+{"ts": 1768314335.2264812, "type": "blink_recorded", "blink_duration_sec": 0.24625134468078613}
+{"ts": 1768314336.2389145, "type": "token_committed", "mode": "LETTERS", "token": "G", "blink_sequence_sec": [0.7495622634887695, 0.7854220867156982, 0.24625134468078613], "transcript": "ABCDEFG", "prompt": null}
+{"ts": 1768314337.2608073, "type": "blink_recorded", "blink_duration_sec": 0.20341062545776367}
+{"ts": 1768314337.7410836, "type": "blink_recorded", "blink_duration_sec": 0.22489190101623535}
+{"ts": 1768314338.2290034, "type": "blink_recorded", "blink_duration_sec": 0.21197748184204102}
+{"ts": 1768314338.6945934, "type": "blink_recorded", "blink_duration_sec": 0.20595574378967285}
+{"ts": 1768314339.7167256, "type": "token_committed", "mode": "LETTERS", "token": "H", "blink_sequence_sec": [0.20341062545776367, 0.22489190101623535, 0.21197748184204102, 0.20595574378967285], "transcript": "ABCDEFGH", "prompt": null}
+{"ts": 1768314340.298252, "type": "blink_recorded", "blink_duration_sec": 0.17119312286376953}
+{"ts": 1768314340.8094091, "type": "blink_recorded", "blink_duration_sec": 0.2060837745666504}
+{"ts": 1768314341.8328676, "type": "token_committed", "mode": "LETTERS", "token": "I", "blink_sequence_sec": [0.17119312286376953, 0.2060837745666504], "transcript": "ABCDEFGHI", "prompt": null}
+{"ts": 1768314342.5139918, "type": "blink_recorded", "blink_duration_sec": 0.20561456680297852}
+{"ts": 1768314343.6859624, "type": "blink_recorded", "blink_duration_sec": 0.7717149257659912}
+{"ts": 1768314345.0487792, "type": "blink_recorded", "blink_duration_sec": 0.820033073425293}
+{"ts": 1768314346.3690019, "type": "blink_recorded", "blink_duration_sec": 0.8878998756408691}
+{"ts": 1768314347.3917706, "type": "token_committed", "mode": "LETTERS", "token": "J", "blink_sequence_sec": [0.20561456680297852, 0.7717149257659912, 0.820033073425293, 0.8878998756408691], "transcript": "ABCDEFGHIJ", "prompt": null}
+{"ts": 1768314348.858786, "type": "blink_recorded", "blink_duration_sec": 0.7518737316131592}
+{"ts": 1768314349.4459264, "type": "blink_recorded", "blink_duration_sec": 0.20558667182922363}
+{"ts": 1768314350.6660037, "type": "blink_recorded", "blink_duration_sec": 0.8180222511291504}
+{"ts": 1768314351.6893322, "type": "token_committed", "mode": "LETTERS", "token": "K", "blink_sequence_sec": [0.7518737316131592, 0.20558667182922363, 0.8180222511291504], "transcript": "ABCDEFGHIJK", "prompt": null}
+{"ts": 1768314352.5248215, "type": "blink_recorded", "blink_duration_sec": 0.24176716804504395}
+{"ts": 1768314353.7009559, "type": "blink_recorded", "blink_duration_sec": 0.784442663192749}
+{"ts": 1768314354.3500998, "type": "blink_recorded", "blink_duration_sec": 0.20517373085021973}
+{"ts": 1768314354.7935843, "type": "blink_recorded", "blink_duration_sec": 0.2042081356048584}
+{"ts": 1768314355.8159897, "type": "token_committed", "mode": "LETTERS", "token": "L", "blink_sequence_sec": [0.24176716804504395, 0.784442663192749, 0.20517373085021973, 0.2042081356048584], "transcript": "ABCDEFGHIJKL", "prompt": null}
+{"ts": 1768314357.2119749, "type": "blink_recorded", "blink_duration_sec": 0.7540867328643799}
+{"ts": 1768314358.4767776, "type": "blink_recorded", "blink_duration_sec": 0.8489172458648682}
+{"ts": 1768314359.4999244, "type": "token_committed", "mode": "LETTERS", "token": "M", "blink_sequence_sec": [0.7540867328643799, 0.8489172458648682], "transcript": "ABCDEFGHIJKLM", "prompt": null}
+{"ts": 1768314360.6931324, "type": "blink_recorded", "blink_duration_sec": 0.7849886417388916}
+{"ts": 1768314361.3200572, "type": "blink_recorded", "blink_duration_sec": 0.27742743492126465}
+{"ts": 1768314362.3307683, "type": "token_committed", "mode": "LETTERS", "token": "N", "blink_sequence_sec": [0.7849886417388916, 0.27742743492126465], "transcript": "ABCDEFGHIJKLMN", "prompt": null}
+{"ts": 1768314363.5574055, "type": "blink_recorded", "blink_duration_sec": 0.7159538269042969}
+{"ts": 1768314364.9568796, "type": "blink_recorded", "blink_duration_sec": 0.9321157932281494}
+{"ts": 1768314366.1837897, "type": "blink_recorded", "blink_duration_sec": 0.8533289432525635}
+{"ts": 1768314367.1883485, "type": "token_committed", "mode": "LETTERS", "token": "O", "blink_sequence_sec": [0.7159538269042969, 0.9321157932281494, 0.8533289432525635], "transcript": "ABCDEFGHIJKLMNO", "prompt": null}
+{"ts": 1768314367.8883898, "type": "blink_recorded", "blink_duration_sec": 0.23770999908447266}
+{"ts": 1768314369.184689, "type": "blink_recorded", "blink_duration_sec": 0.8835668563842773}
+{"ts": 1768314370.5478027, "type": "blink_recorded", "blink_duration_sec": 0.8853647708892822}
+{"ts": 1768314371.0939722, "type": "blink_recorded", "blink_duration_sec": 0.24940729141235352}
+{"ts": 1768314372.1181579, "type": "token_committed", "mode": "LETTERS", "token": "P", "blink_sequence_sec": [0.23770999908447266, 0.8835668563842773, 0.8853647708892822, 0.24940729141235352], "transcript": "ABCDEFGHIJKLMNOP", "prompt": null}
+{"ts": 1768314373.6188438, "type": "blink_recorded", "blink_duration_sec": 0.9279634952545166}
+{"ts": 1768314375.0852177, "type": "blink_recorded", "blink_duration_sec": 1.0212852954864502}
+{"ts": 1768314375.7672737, "type": "blink_recorded", "blink_duration_sec": 0.24909687042236328}
+{"ts": 1768314376.9950707, "type": "blink_recorded", "blink_duration_sec": 0.9749960899353027}
+{"ts": 1768314378.0194745, "type": "token_committed", "mode": "LETTERS", "token": "Q", "blink_sequence_sec": [0.9279634952545166, 1.0212852954864502, 0.24909687042236328, 0.9749960899353027], "transcript": "ABCDEFGHIJKLMNOPQ", "prompt": null}
+{"ts": 1768314380.319962, "type": "blink_recorded", "blink_duration_sec": 0.23830294609069824}
+{"ts": 1768314381.5653794, "type": "blink_recorded", "blink_duration_sec": 0.8878254890441895}
+{"ts": 1768314382.153231, "type": "blink_recorded", "blink_duration_sec": 0.2720224857330322}
+{"ts": 1768314383.16725, "type": "token_committed", "mode": "LETTERS", "token": "R", "blink_sequence_sec": [0.23830294609069824, 0.8878254890441895, 0.2720224857330322], "transcript": "ABCDEFGHIJKLMNOPQR", "prompt": null}
+{"ts": 1768314383.78207, "type": "blink_recorded", "blink_duration_sec": 0.20662975311279297}
+{"ts": 1768314384.2923732, "type": "blink_recorded", "blink_duration_sec": 0.2369682788848877}
+{"ts": 1768314384.710321, "type": "blink_recorded", "blink_duration_sec": 0.20184803009033203}
+{"ts": 1768314385.7240841, "type": "token_committed", "mode": "LETTERS", "token": "S", "blink_sequence_sec": [0.20662975311279297, 0.2369682788848877, 0.20184803009033203], "transcript": "ABCDEFGHIJKLMNOPQRS", "prompt": null}
+{"ts": 1768314387.5680065, "type": "blink_recorded", "blink_duration_sec": 0.8873238563537598}
+{"ts": 1768314388.5908148, "type": "token_committed", "mode": "LETTERS", "token": "T", "blink_sequence_sec": [0.8873238563537598], "transcript": "ABCDEFGHIJKLMNOPQRST", "prompt": null}
+{"ts": 1768314389.4099057, "type": "blink_recorded", "blink_duration_sec": 0.23844337463378906}
+{"ts": 1768314389.8189669, "type": "blink_recorded", "blink_duration_sec": 0.20386242866516113}
+{"ts": 1768314391.047203, "type": "blink_recorded", "blink_duration_sec": 0.8555188179016113}
+{"ts": 1768314392.067689, "type": "token_committed", "mode": "LETTERS", "token": "U", "blink_sequence_sec": [0.23844337463378906, 0.20386242866516113, 0.8555188179016113], "transcript": "ABCDEFGHIJKLMNOPQRSTU", "prompt": null}
+{"ts": 1768314392.854938, "type": "blink_recorded", "blink_duration_sec": 0.20370006561279297}
+{"ts": 1768314393.3315454, "type": "blink_recorded", "blink_duration_sec": 0.24001121520996094}
+{"ts": 1768314393.819472, "type": "blink_recorded", "blink_duration_sec": 0.24628162384033203}
+{"ts": 1768314395.1167371, "type": "blink_recorded", "blink_duration_sec": 0.8841993808746338}
+{"ts": 1768314396.1364279, "type": "token_committed", "mode": "LETTERS", "token": "V", "blink_sequence_sec": [0.20370006561279297, 0.24001121520996094, 0.24628162384033203, 0.8841993808746338], "transcript": "ABCDEFGHIJKLMNOPQRSTUV", "prompt": null}
+{"ts": 1768314397.7652671, "type": "blink_recorded", "blink_duration_sec": 0.23817181587219238}
+{"ts": 1768314398.9933698, "type": "blink_recorded", "blink_duration_sec": 0.8135237693786621}
+{"ts": 1768314400.0836267, "type": "blink_recorded", "blink_duration_sec": 0.7491908073425293}
+{"ts": 1768314401.1077015, "type": "token_committed", "mode": "LETTERS", "token": "W", "blink_sequence_sec": [0.23817181587219238, 0.8135237693786621, 0.7491908073425293], "transcript": "ABCDEFGHIJKLMNOPQRSTUVW", "prompt": null}
+{"ts": 1768314402.745629, "type": "blink_recorded", "blink_duration_sec": 0.8864834308624268}
+{"ts": 1768314403.3592222, "type": "blink_recorded", "blink_duration_sec": 0.20341944694519043}
+{"ts": 1768314403.767263, "type": "blink_recorded", "blink_duration_sec": 0.1700446605682373}
+{"ts": 1768314405.0639732, "type": "blink_recorded", "blink_duration_sec": 0.9215371608734131}
+{"ts": 1768314406.0881503, "type": "token_committed", "mode": "LETTERS", "token": "X", "blink_sequence_sec": [0.8864834308624268, 0.20341944694519043, 0.1700446605682373, 0.9215371608734131], "transcript": "ABCDEFGHIJKLMNOPQRSTUVWX", "prompt": null}
+{"ts": 1768314407.3619163, "type": "blink_recorded", "blink_duration_sec": 0.306408166885376}
+{"ts": 1768314408.3762717, "type": "token_committed", "mode": "LETTERS", "token": "E", "blink_sequence_sec": [0.306408166885376], "transcript": "ABCDEFGHIJKLMNOPQRSTUVWXE", "prompt": null}
+{"ts": 1768314411.510746, "type": "blink_recorded", "blink_duration_sec": 0.8431670665740967}
+{"ts": 1768314412.122212, "type": "blink_recorded", "blink_duration_sec": 0.20778656005859375}
+{"ts": 1768314412.5341063, "type": "blink_recorded", "blink_duration_sec": 0.17141389846801758}
+{"ts": 1768314413.8300464, "type": "blink_recorded", "blink_duration_sec": 0.8184919357299805}
+{"ts": 1768314414.8531938, "type": "token_committed", "mode": "LETTERS", "token": "X", "blink_sequence_sec": [0.8431670665740967, 0.20778656005859375, 0.17141389846801758, 0.8184919357299805], "transcript": "ABCDEFGHIJKLMNOPQRSTUVWXEX", "prompt": null}
+{"ts": 1768314418.1272888, "type": "blink_recorded", "blink_duration_sec": 0.8644070625305176}
+{"ts": 1768314418.7398236, "type": "blink_recorded", "blink_duration_sec": 0.21574902534484863}
+{"ts": 1768314420.0370016, "type": "blink_recorded", "blink_duration_sec": 0.9526829719543457}
+{"ts": 1768314421.434641, "type": "blink_recorded", "blink_duration_sec": 0.8518838882446289}
+{"ts": 1768314422.4573185, "type": "token_committed", "mode": "LETTERS", "token": "Y", "blink_sequence_sec": [0.8644070625305176, 0.21574902534484863, 0.9526829719543457, 0.8518838882446289], "transcript": "ABCDEFGHIJKLMNOPQRSTUVWXEXY", "prompt": null}
+{"ts": 1768314423.856937, "type": "blink_recorded", "blink_duration_sec": 0.7746155261993408}
+{"ts": 1768314425.4027948, "type": "blink_recorded", "blink_duration_sec": 0.9278244972229004}
+{"ts": 1768314426.2772856, "type": "blink_recorded", "blink_duration_sec": 0.240187406539917}
+{"ts": 1768314426.6184714, "type": "blink_recorded", "blink_duration_sec": 0.20482754707336426}
+{"ts": 1768314427.6425116, "type": "token_committed", "mode": "LETTERS", "token": "Z", "blink_sequence_sec": [0.7746155261993408, 0.9278244972229004, 0.240187406539917, 0.20482754707336426], "transcript": "ABCDEFGHIJKLMNOPQRSTUVWXEXYZ", "prompt": null}
+{"ts": 1768314447.7292905, "type": "blink_recorded", "blink_duration_sec": 0.06963205337524414}
+{"ts": 1768314448.002128, "type": "blink_recorded", "blink_duration_sec": 0.10367012023925781}
+{"ts": 1768314449.0259206, "type": "token_committed", "mode": "LETTERS", "token": "I", "blink_sequence_sec": [0.06963205337524414, 0.10367012023925781], "transcript": "ABCDEFGHIJKLMNOPQRSTUVWXEXYZI", "prompt": null}
+{"ts": 1768314454.3121095, "type": "blink_recorded", "blink_duration_sec": 0.06817102432250977}
+{"ts": 1768314455.3366127, "type": "token_committed", "mode": "LETTERS", "token": "E", "blink_sequence_sec": [0.06817102432250977], "transcript": "ABCDEFGHIJKLMNOPQRSTUVWXEXYZIE", "prompt": null}
+{"ts": 1768314456.8701112, "type": "blink_recorded", "blink_duration_sec": 0.17159247398376465}
+{"ts": 1768314459.1195078, "type": "gesture_speak_sentence", "blink_duration_sec": 2.1218795776367188, "mode": "LETTERS", "transcript": "ABCDEFGHIJKLMNOPQRSTUVWXEXYZIE", "prompt": null}
+{"ts": 1768314460.144178, "type": "token_committed", "mode": "LETTERS", "token": "E", "blink_sequence_sec": [0.17159247398376465], "transcript": "ABCDEFGHIJKLMNOPQRSTUVWXEXYZIEE", "prompt": null}
+{"ts": 1768314465.396511, "type": "blink_recorded", "blink_duration_sec": 1.7056734561920166}
+{"ts": 1768314466.419691, "type": "token_committed", "mode": "LETTERS", "token": "T", "blink_sequence_sec": [1.7056734561920166], "transcript": "ABCDEFGHIJKLMNOPQRSTUVWXEXYZIEET", "prompt": null}
+{"ts": 1768314469.9321482, "type": "blink_recorded", "blink_duration_sec": 0.06804633140563965}
+{"ts": 1768314470.4783409, "type": "blink_recorded", "blink_duration_sec": 0.10217142105102539}
+{"ts": 1768314470.9901562, "type": "blink_recorded", "blink_duration_sec": 0.05751943588256836}
+{"ts": 1768314471.569663, "type": "blink_recorded", "blink_duration_sec": 0.13594293594360352}
+{"ts": 1768314472.5940065, "type": "token_committed", "mode": "LETTERS", "token": "H", "blink_sequence_sec": [0.06804633140563965, 0.10217142105102539, 0.05751943588256836, 0.13594293594360352], "transcript": "ABCDEFGHIJKLMNOPQRSTUVWXEXYZIEETH", "prompt": null}
+{"ts": 1768314473.786934, "type": "blink_recorded", "blink_duration_sec": 0.0685281753540039}
+{"ts": 1768314474.8100517, "type": "token_committed", "mode": "LETTERS", "token": "E", "blink_sequence_sec": [0.0685281753540039], "transcript": "ABCDEFGHIJKLMNOPQRSTUVWXEXYZIEETHE", "prompt": null}
