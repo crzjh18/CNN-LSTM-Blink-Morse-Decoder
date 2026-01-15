@@ -1,0 +1,22 @@
+{"ts": 1768436819.005517, "type": "blink_recorded", "blink_duration_sec": 0.1361989974975586}
+{"ts": 1768436820.238237, "type": "blink_recorded", "blink_duration_sec": 0.6148734092712402}
+{"ts": 1768436820.7129297, "type": "blink_recorded", "blink_duration_sec": 0.17177581787109375}
+{"ts": 1768436821.7383206, "type": "blink_recorded", "blink_duration_sec": 0.6499068737030029}
+{"ts": 1768436822.7577493, "type": "token_committed", "mode": "WORD", "token": "Warrant/Record Check", "blink_sequence_sec": [0.1361989974975586, 0.6148734092712402, 0.17177581787109375, 0.6499068737030029], "transcript": "Warrant/Record Check", "prompt": null}
+{"ts": 1768436826.820551, "type": "blink_recorded", "blink_duration_sec": 0.09762907028198242}
+{"ts": 1768436828.4889524, "type": "blink_recorded", "blink_duration_sec": 0.780078649520874}
+{"ts": 1768436828.8990426, "type": "blink_recorded", "blink_duration_sec": 0.1371922492980957}
+{"ts": 1768436829.9214516, "type": "blink_recorded", "blink_duration_sec": 0.6138341426849365}
+{"ts": 1768436830.9434283, "type": "token_committed", "mode": "LETTERS", "token": "F", "blink_sequence_sec": [0.09762907028198242, 0.780078649520874, 0.1371922492980957, 0.6138341426849365], "transcript": "Warrant/Record Check F", "prompt": null}
+{"ts": 1768436833.850556, "type": "blink_recorded", "blink_duration_sec": 0.9233019351959229}
+{"ts": 1768436834.7197971, "type": "blink_recorded", "blink_duration_sec": 0.1672532558441162}
+{"ts": 1768436835.7528822, "type": "blink_recorded", "blink_duration_sec": 0.6479885578155518}
+{"ts": 1768436836.2971268, "type": "blink_recorded", "blink_duration_sec": 0.19527816772460938}
+{"ts": 1768436837.3220701, "type": "token_committed", "mode": "LETTERS", "token": "C", "blink_sequence_sec": [0.9233019351959229, 0.1672532558441162, 0.6479885578155518, 0.19527816772460938], "transcript": "Warrant/Record Check FC", "prompt": null}
+{"ts": 1768436839.2662985, "type": "blink_recorded", "blink_duration_sec": 0.2062993049621582}
+{"ts": 1768436840.1550221, "type": "blink_recorded", "blink_duration_sec": 0.6198432445526123}
+{"ts": 1768436840.5946043, "type": "blink_recorded", "blink_duration_sec": 0.16972756385803223}
+{"ts": 1768436841.5213616, "type": "blink_recorded", "blink_duration_sec": 0.586317777633667}
+{"ts": 1768436842.5413268, "type": "token_committed", "mode": "LETTERS", "token": "F", "blink_sequence_sec": [0.2062993049621582, 0.6198432445526123, 0.16972756385803223, 0.586317777633667], "transcript": "Warrant/Record Check FCF", "prompt": null}
+{"ts": 1768436845.6808095, "type": "blink_recorded", "blink_duration_sec": 0.13769745826721191}
+{"ts": 1768436846.7057917, "type": "token_committed", "mode": "LETTERS", "token": "E", "blink_sequence_sec": [0.13769745826721191], "transcript": "Warrant/Record Check FCFE", "prompt": null}

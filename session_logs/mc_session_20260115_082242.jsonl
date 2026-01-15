@@ -1,0 +1,56 @@
+{"ts": 1768436566.8109372, "type": "blink_recorded", "blink_duration_sec": 0.17202377319335938}
+{"ts": 1768436567.838118, "type": "token_committed", "mode": "WORD", "token": "Registration Information", "blink_sequence_sec": [0.17202377319335938], "transcript": "Registration Information", "prompt": null}
+{"ts": 1768436568.9935927, "type": "blink_recorded", "blink_duration_sec": 0.4431886672973633}
+{"ts": 1768436570.0221288, "type": "token_committed", "mode": "WORD", "token": "Registration Information", "blink_sequence_sec": [0.4431886672973633], "transcript": "Registration Information Registration Information", "prompt": null}
+{"ts": 1768436571.4177928, "type": "blink_recorded", "blink_duration_sec": 0.4729008674621582}
+{"ts": 1768436572.885873, "type": "blink_recorded", "blink_duration_sec": 0.719548225402832}
+{"ts": 1768436573.910808, "type": "token_committed", "mode": "WORD", "token": "Assignment Completed", "blink_sequence_sec": [0.4729008674621582, 0.719548225402832], "transcript": "Registration Information Registration Information Assignment Completed", "prompt": null}
+{"ts": 1768436579.365802, "type": "blink_recorded", "blink_duration_sec": 0.5126628875732422}
+{"ts": 1768436580.3896897, "type": "token_committed", "mode": "LETTERS", "token": "T", "blink_sequence_sec": [0.5126628875732422], "transcript": "Registration Information Registration Information Assignment Completed T", "prompt": null}
+{"ts": 1768436582.606983, "type": "blink_recorded", "blink_duration_sec": 0.310530424118042}
+{"ts": 1768436583.6286223, "type": "token_committed", "mode": "LETTERS", "token": "E", "blink_sequence_sec": [0.310530424118042], "transcript": "Registration Information Registration Information Assignment Completed TE", "prompt": null}
+{"ts": 1768436584.5862489, "type": "blink_recorded", "blink_duration_sec": 0.40204834938049316}
+{"ts": 1768436585.6088753, "type": "token_committed", "mode": "LETTERS", "token": "E", "blink_sequence_sec": [0.40204834938049316], "transcript": "Registration Information Registration Information Assignment Completed TEE", "prompt": null}
+{"ts": 1768436586.5644865, "type": "blink_recorded", "blink_duration_sec": 0.4100492000579834}
+{"ts": 1768436587.5846453, "type": "token_committed", "mode": "LETTERS", "token": "E", "blink_sequence_sec": [0.4100492000579834], "transcript": "Registration Information Registration Information Assignment Completed TEEE", "prompt": null}
+{"ts": 1768436590.2114487, "type": "blink_recorded", "blink_duration_sec": 0.5120575428009033}
+{"ts": 1768436591.22159, "type": "token_committed", "mode": "LETTERS", "token": "T", "blink_sequence_sec": [0.5120575428009033], "transcript": "Registration Information Registration Information Assignment Completed TEEET", "prompt": null}
+{"ts": 1768436592.9732802, "type": "blink_recorded", "blink_duration_sec": 0.30753326416015625}
+{"ts": 1768436594.1674395, "type": "blink_recorded", "blink_duration_sec": 0.3810572624206543}
+{"ts": 1768436595.3285928, "type": "blink_recorded", "blink_duration_sec": 0.5115628242492676}
+{"ts": 1768436596.111701, "type": "blink_recorded", "blink_duration_sec": 0.30254054069519043}
+{"ts": 1768436597.1178362, "type": "token_committed", "mode": "LETTERS", "token": "F", "blink_sequence_sec": [0.30753326416015625, 0.3810572624206543, 0.5115628242492676, 0.30254054069519043], "transcript": "Registration Information Registration Information Assignment Completed TEEETF", "prompt": null}
+{"ts": 1768436598.5910337, "type": "blink_recorded", "blink_duration_sec": 0.1710350513458252}
+{"ts": 1768436599.5971737, "type": "token_committed", "mode": "LETTERS", "token": "E", "blink_sequence_sec": [0.1710350513458252], "transcript": "Registration Information Registration Information Assignment Completed TEEETFE", "prompt": null}
+{"ts": 1768436601.2268784, "type": "blink_recorded", "blink_duration_sec": 0.5420691967010498}
+{"ts": 1768436601.616936, "type": "blink_recorded", "blink_duration_sec": 0.13451910018920898}
+{"ts": 1768436602.5595498, "type": "blink_recorded", "blink_duration_sec": 0.5490741729736328}
+{"ts": 1768436603.0481026, "type": "blink_recorded", "blink_duration_sec": 0.20901989936828613}
+{"ts": 1768436604.0592225, "type": "token_committed", "mode": "LETTERS", "token": "B", "blink_sequence_sec": [0.5420691967010498, 0.13451910018920898, 0.5490741729736328, 0.20901989936828613], "transcript": "Registration Information Registration Information Assignment Completed TEEETFEB", "prompt": null}
+{"ts": 1768436610.5745752, "type": "blink_recorded", "blink_duration_sec": 0.18602776527404785}
+{"ts": 1768436611.6017175, "type": "blink_recorded", "blink_duration_sec": 0.8886194229125977}
+{"ts": 1768436612.4513395, "type": "blink_recorded", "blink_duration_sec": 0.1315147876739502}
+{"ts": 1768436613.1329432, "type": "blink_recorded", "blink_duration_sec": 0.4775724411010742}
+{"ts": 1768436614.1221006, "type": "blink_recorded", "blink_duration_sec": 0.6661040782928467}
+{"ts": 1768436617.019015, "type": "gesture_speak_sentence", "blink_duration_sec": 2.6248793601989746, "mode": "LETTERS", "transcript": "Registration Information Registration Information Assignment Completed TEEETFEB", "prompt": null}
+{"ts": 1768436617.9856458, "type": "blink_recorded", "blink_duration_sec": 0.7761130332946777}
+{"ts": 1768436619.640397, "type": "blink_recorded", "blink_duration_sec": 0.6815974712371826}
+{"ts": 1768436620.6495373, "type": "token_committed", "mode": "LETTERS", "token": ".", "blink_sequence_sec": [0.18602776527404785, 0.8886194229125977, 0.1315147876739502, 0.4775724411010742, 0.6661040782928467, 0.7761130332946777, 0.6815974712371826], "transcript": "Registration Information Registration Information Assignment Completed TEEETFEB.", "prompt": null}
+{"ts": 1768436624.6950824, "type": "blink_recorded", "blink_duration_sec": 0.23102879524230957}
+{"ts": 1768436625.783732, "type": "blink_recorded", "blink_duration_sec": 0.20302653312683105}
+{"ts": 1768436627.8335164, "type": "blink_recorded", "blink_duration_sec": 0.10251379013061523}
+{"ts": 1768436628.8536491, "type": "token_committed", "mode": "LETTERS", "token": "E", "blink_sequence_sec": [0.10251379013061523], "transcript": "Registration Information Registration Information Assignment Completed TEEETFEE", "prompt": null}
+{"ts": 1768436631.3754892, "type": "blink_recorded", "blink_duration_sec": 0.24002528190612793}
+{"ts": 1768436632.4351447, "type": "blink_recorded", "blink_duration_sec": 0.6466038227081299}
+{"ts": 1768436632.9837103, "type": "blink_recorded", "blink_duration_sec": 0.22602319717407227}
+{"ts": 1768436633.9938352, "type": "blink_recorded", "blink_duration_sec": 0.619074821472168}
+{"ts": 1768436634.993985, "type": "token_committed", "mode": "LETTERS", "token": "F", "blink_sequence_sec": [0.24002528190612793, 0.6466038227081299, 0.22602319717407227, 0.619074821472168], "transcript": "Registration Information Registration Information Assignment Completed TEEETFEF", "prompt": null}
+{"ts": 1768436636.492681, "type": "blink_recorded", "blink_duration_sec": 0.6805927753448486}
+{"ts": 1768436637.019762, "type": "blink_recorded", "blink_duration_sec": 0.22602534294128418}
+{"ts": 1768436637.995372, "type": "blink_recorded", "blink_duration_sec": 0.6150784492492676}
+{"ts": 1768436638.5304623, "type": "blink_recorded", "blink_duration_sec": 0.23602819442749023}
+{"ts": 1768436640.2096837, "type": "token_committed", "mode": "LETTERS", "token": "C", "blink_sequence_sec": [0.6805927753448486, 0.22602534294128418, 0.6150784492492676, 0.23602819442749023], "transcript": "Registration Information Registration Information Assignment Completed TEEETFEFC", "prompt": null}
+{"ts": 1768436642.8020272, "type": "blink_recorded", "blink_duration_sec": 1.0231406688690186}
+{"ts": 1768436643.8386922, "type": "token_committed", "mode": "LETTERS", "token": "T", "blink_sequence_sec": [1.0231406688690186], "transcript": "Registration Information Registration Information Assignment Completed TEEETFEFCT", "prompt": null}
+{"ts": 1768436650.8757048, "type": "blink_recorded", "blink_duration_sec": 0.06351041793823242}
+{"ts": 1768436651.92535, "type": "token_committed", "mode": "LETTERS", "token": "E", "blink_sequence_sec": [0.06351041793823242], "transcript": "Registration Information Registration Information Assignment Completed TEEETFEFCTE", "prompt": null}

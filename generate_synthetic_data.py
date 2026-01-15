@@ -6,7 +6,7 @@ import numpy as np
 #           CONFIGURATION
 # ==========================================
 OUTPUT_FILE = "morse_sequences.jsonl"
-NUM_SAMPLES_PER_CHAR = 500  # 500 examples per character
+NUM_SAMPLES_PER_CHAR = 1000  # 500 examples per character
 
 # 1. ITU-R M.1677-1 OFFICIAL DICTIONARY
 # This includes the standard letters, numbers, and punctuation.
@@ -41,24 +41,26 @@ MORSE_CODE_DICT = {
 
 # 2. SIMPLE TIMING CONFIGURATION (Seconds)
 # We ignore WPM formulas and just use "Short vs Long" logic.
-DOT_MEAN = 0.15   # Average time for a Dot (0.25s)
-DASH_MEAN = 0.65  # Average time for a Dash (0.75s)
-JITTER = 0.05     # Standard Deviation (Randomness)
+DOT_MEAN = 0.20   # Increased slightly (0.15 is very fast for a human)
+DASH_MEAN = 0.70  # Standard human dash
+JITTER = 0.15     # HIGH VARIANCE -> Solves the 'F'/'C' confusion
 
 def generate_duration(symbol):
     """
-    Generates a duration with simple random noise.
-    No complex WPM math, just Dot vs Dash.
+    Generates a duration with significant random noise to mimic
+    imperfect human timing (SOP 4 Generalization).
     """
     if symbol == '.':
-        # Generate random time centered around 0.25s
+        # Generate random time centered around 0.20s
         duration = np.random.normal(DOT_MEAN, JITTER)
-        return max(0.05, min(duration, 0.5)) # Clamp between 0.05s and 0.5s
+        # Clamp Max at 0.45s to leave a gap before the Dash starts
+        return max(0.05, min(duration, 0.45)) 
         
     elif symbol == '-':
-        # Generate random time centered around 0.75s
+        # Generate random time centered around 0.70s
         duration = np.random.normal(DASH_MEAN, JITTER)
-        return max(0.5, min(duration, 1.5)) # Clamp between 0.5s and 1.5s
+        # Clamp Min at 0.55s to ensure distinct separation from Dot
+        return max(0.55, min(duration, 1.5)) 
         
     return 0.0
 

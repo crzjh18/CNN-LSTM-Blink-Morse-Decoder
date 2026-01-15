@@ -1,0 +1,10 @@
+{"ts": 1768437675.642707, "type": "blink_recorded", "blink_duration_sec": 0.13570713996887207}
+{"ts": 1768437676.753372, "type": "blink_recorded", "blink_duration_sec": 0.7155985832214355}
+{"ts": 1768437677.2656896, "type": "blink_recorded", "blink_duration_sec": 0.24033713340759277}
+{"ts": 1768437678.2941065, "type": "blink_recorded", "blink_duration_sec": 0.6884462833404541}
+{"ts": 1768437679.295095, "type": "token_committed", "mode": "WORD", "token": "Warrant/Record Check", "blink_sequence_sec": [0.13570713996887207, 0.7155985832214355, 0.24033713340759277, 0.6884462833404541], "transcript": "Warrant/Record Check", "prompt": null}
+{"ts": 1768437684.4595106, "type": "blink_recorded", "blink_duration_sec": 0.6158597469329834}
+{"ts": 1768437685.2109911, "type": "blink_recorded", "blink_duration_sec": 0.33893346786499023}
+{"ts": 1768437686.337651, "type": "blink_recorded", "blink_duration_sec": 0.6479785442352295}
+{"ts": 1768437686.953022, "type": "blink_recorded", "blink_duration_sec": 0.27387237548828125}
+{"ts": 1768437687.973438, "type": "token_committed", "mode": "LETTERS", "token": "C", "blink_sequence_sec": [0.6158597469329834, 0.33893346786499023, 0.6479785442352295, 0.27387237548828125], "transcript": "Warrant/Record Check C", "prompt": null}

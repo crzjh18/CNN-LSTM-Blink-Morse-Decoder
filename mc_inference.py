@@ -44,6 +44,7 @@ WORD_PAUSE_GRACE = 2.0
 SENTENCE_SPEAK_BLINK_SEC = 2.0  # long blink gesture: speak the full current transcript
 BATCH_COMMIT_BLINK_SEC = 2.0    # long blink gesture: decode buffered Morse
 MIN_OPEN_STABILITY = 0.1 # seconds; debounce time to ignore blink glitches
+DOT_DASH_THRESHOLD = 0.52  # split between dot and dash durations (sec)
 
 # Evaluation / logging (SOP4 support)
 EVAL_PROMPT_MODE = False           # If True: show prompts, score attempts, log metrics
@@ -149,7 +150,7 @@ def play_morse_beep(duration_sec: float):
     """Enqueue a dot/dash beep based on the same threshold used for rendering."""
     if current_audio_mode != "BEEP":
         return
-    is_dot = duration_sec < 0.5
+    is_dot = duration_sec < DOT_DASH_THRESHOLD
     beep_queue.put((BEEP_FREQ_HZ, DOT_BEEP_MS if is_dot else DASH_BEEP_MS))
 
 
@@ -157,7 +158,7 @@ def speak_unit(duration_sec: float):
     """Optional spoken feedback for dot/dash when in TTS mode."""
     if current_audio_mode != "TTS":
         return
-    is_dot = duration_sec < 0.5
+    is_dot = duration_sec < DOT_DASH_THRESHOLD
     speak_text("dot" if is_dot else "dash")
 
 
@@ -706,7 +707,7 @@ def main():
 
                                     if current_mode == "BUFFER":
                                         # Build the Morse token without decoding yet
-                                        if duration < 0.5:
+                                        if duration < DOT_DASH_THRESHOLD:
                                             current_morse_token += "."
                                         else:
                                             current_morse_token += "-"
@@ -894,7 +895,7 @@ def main():
         else:
             seq_str = ""
             for dur in current_blink_sequence:
-                if dur < 0.5: seq_str += "."
+                if dur < DOT_DASH_THRESHOLD: seq_str += "."
                 else: seq_str += "-"
 
         # Show assembled text + current blink pattern
