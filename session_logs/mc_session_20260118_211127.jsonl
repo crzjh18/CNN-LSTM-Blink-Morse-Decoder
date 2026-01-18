@@ -1,0 +1,7 @@
+{"ts": 1768741926.2080958, "type": "blink_recorded", "blink_duration_sec": 0.1363978385925293}
+{"ts": 1768741927.1982324, "type": "blink_recorded", "blink_duration_sec": 0.5775449275970459}
+{"ts": 1768741927.6419885, "type": "blink_recorded", "blink_duration_sec": 0.20589280128479004}
+{"ts": 1768741928.2201507, "type": "blink_recorded", "blink_duration_sec": 0.23976993560791016}
+{"ts": 1768741929.2131078, "type": "blink_recorded", "blink_duration_sec": 0.6520965099334717}
+{"ts": 1768741929.7599335, "type": "blink_recorded", "blink_duration_sec": 0.20640158653259277}
+{"ts": 1768741930.7631254, "type": "token_committed", "mode": "WORD", "token": "Evil Mojo Threw so Hard", "blink_sequence_sec": [0.1363978385925293, 0.5775449275970459, 0.20589280128479004, 0.23976993560791016, 0.6520965099334717, 0.20640158653259277], "transcript": "Evil Mojo Threw so Hard", "prompt": null}

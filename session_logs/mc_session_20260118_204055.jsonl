@@ -1,0 +1,21 @@
+{"ts": 1768740073.3436673, "type": "blink_recorded", "blink_duration_sec": 0.7135734558105469}
+{"ts": 1768740073.6505477, "type": "blink_recorded", "blink_duration_sec": 0.06768679618835449}
+{"ts": 1768740074.7446046, "type": "blink_recorded", "blink_duration_sec": 0.6218528747558594}
+{"ts": 1768740075.7692242, "type": "token_committed", "mode": "WORD", "token": "Time", "blink_sequence_sec": [0.7135734558105469, 0.06768679618835449, 0.6218528747558594], "transcript": "Time", "prompt": null}
+{"ts": 1768740081.9418256, "type": "blink_recorded", "blink_duration_sec": 0.06761860847473145}
+{"ts": 1768740082.9481082, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.06761860847473145], "transcript": "Time Test", "prompt": null}
+{"ts": 1768740084.5016248, "type": "blink_recorded", "blink_duration_sec": 0.09477758407592773}
+{"ts": 1768740084.8059256, "type": "blink_recorded", "blink_duration_sec": 0.13436651229858398}
+{"ts": 1768740085.8284183, "type": "token_committed", "mode": "WORD", "token": "Units Needed", "blink_sequence_sec": [0.09477758407592773, 0.13436651229858398], "transcript": "Time Test Units Needed", "prompt": null}
+{"ts": 1768740090.2274485, "type": "blink_recorded", "blink_duration_sec": 0.5453836917877197}
+{"ts": 1768740091.2526262, "type": "token_committed", "mode": "WORD", "token": "Chase", "blink_sequence_sec": [0.5453836917877197], "transcript": "Time Test Units Needed Chase", "prompt": null}
+{"ts": 1768740097.083692, "type": "blink_recorded", "blink_duration_sec": 0.0668797492980957}
+{"ts": 1768740098.1082993, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.0668797492980957], "transcript": "Time Test Units Needed Chase Test", "prompt": null}
+{"ts": 1768740100.3227575, "type": "blink_recorded", "blink_duration_sec": 0.16951441764831543}
+{"ts": 1768740101.3462405, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.16951441764831543], "transcript": "Time Test Units Needed Chase Test Test", "prompt": null}
+{"ts": 1768740103.9733386, "type": "blink_recorded", "blink_duration_sec": 0.10399675369262695}
+{"ts": 1768740104.1796086, "type": "blink_recorded", "blink_duration_sec": 0.06563091278076172}
+{"ts": 1768740105.200739, "type": "token_committed", "mode": "WORD", "token": "Units Needed", "blink_sequence_sec": [0.10399675369262695, 0.06563091278076172], "transcript": "Time Test Units Needed Chase Test Test Units Needed", "prompt": null}
+{"ts": 1768740107.9726071, "type": "blink_recorded", "blink_duration_sec": 0.06995558738708496}
+{"ts": 1768740108.5081747, "type": "blink_recorded", "blink_duration_sec": 0.13756775856018066}
+{"ts": 1768740109.5313172, "type": "token_committed", "mode": "WORD", "token": "Units Needed", "blink_sequence_sec": [0.06995558738708496, 0.13756775856018066], "transcript": "Time Test Units Needed Chase Test Test Units Needed Units Needed", "prompt": null}

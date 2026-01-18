@@ -1,0 +1,81 @@
+{"ts": 1768740560.5006394, "type": "blink_recorded", "blink_duration_sec": 0.10211968421936035}
+{"ts": 1768740561.0813282, "type": "blink_recorded", "blink_duration_sec": 0.17000269889831543}
+{"ts": 1768740562.2057683, "type": "blink_recorded", "blink_duration_sec": 0.13550138473510742}
+{"ts": 1768740563.6548057, "type": "blink_recorded", "blink_duration_sec": 0.6213822364807129}
+{"ts": 1768740564.8369057, "type": "blink_recorded", "blink_duration_sec": 0.6810529232025146}
+{"ts": 1768740565.861189, "type": "token_committed", "mode": "WORD", "token": "Existing Conditions", "blink_sequence_sec": [0.10211968421936035, 0.17000269889831543, 0.13550138473510742, 0.6213822364807129, 0.6810529232025146], "transcript": "Existing Conditions", "prompt": null}
+{"ts": 1768740573.670517, "type": "blink_recorded", "blink_duration_sec": 0.05523848533630371}
+{"ts": 1768740573.9081812, "type": "blink_recorded", "blink_duration_sec": 0.10203266143798828}
+{"ts": 1768740574.6258547, "type": "blink_recorded", "blink_duration_sec": 0.2741098403930664}
+{"ts": 1768740575.922889, "type": "blink_recorded", "blink_duration_sec": 0.61484694480896}
+{"ts": 1768740576.9758937, "type": "blink_recorded", "blink_duration_sec": 0.6811995506286621}
+{"ts": 1768740578.0036287, "type": "token_committed", "mode": "LETTERS", "token": "3", "blink_sequence_sec": [0.05523848533630371, 0.10203266143798828, 0.2741098403930664, 0.61484694480896, 0.6811995506286621], "transcript": "Existing Conditions 3", "prompt": null}
+{"ts": 1768740582.7421253, "type": "blink_recorded", "blink_duration_sec": 0.5160636901855469}
+{"ts": 1768740584.2784412, "type": "blink_recorded", "blink_duration_sec": 0.9146089553833008}
+{"ts": 1768740584.957978, "type": "blink_recorded", "blink_duration_sec": 0.5417265892028809}
+{"ts": 1768740585.6081116, "type": "blink_recorded", "blink_duration_sec": 0.3454017639160156}
+{"ts": 1768740586.6319234, "type": "token_committed", "mode": "LETTERS", "token": "P", "blink_sequence_sec": [0.5160636901855469, 0.9146089553833008, 0.5417265892028809, 0.3454017639160156], "transcript": "Existing Conditions P", "prompt": null}
+{"ts": 1768740590.9279494, "type": "blink_recorded", "blink_duration_sec": 0.47902941703796387}
+{"ts": 1768740591.3699136, "type": "blink_recorded", "blink_duration_sec": 0.3024907112121582}
+{"ts": 1768740591.855549, "type": "blink_recorded", "blink_duration_sec": 0.34248852729797363}
+{"ts": 1768740592.5302296, "type": "blink_recorded", "blink_duration_sec": 0.4698934555053711}
+{"ts": 1768740593.5598764, "type": "token_committed", "mode": "LETTERS", "token": "H", "blink_sequence_sec": [0.47902941703796387, 0.3024907112121582, 0.34248852729797363, 0.4698934555053711], "transcript": "Existing Conditions PH", "prompt": null}
+{"ts": 1768740600.517904, "type": "blink_recorded", "blink_duration_sec": 0.7122485637664795}
+{"ts": 1768740601.5397773, "type": "token_committed", "mode": "LETTERS", "token": "T", "blink_sequence_sec": [0.7122485637664795], "transcript": "Existing Conditions PHT", "prompt": null}
+{"ts": 1768740602.4538174, "type": "blink_recorded", "blink_duration_sec": 0.10387110710144043}
+{"ts": 1768740602.9787157, "type": "blink_recorded", "blink_duration_sec": 0.17218971252441406}
+{"ts": 1768740603.9927583, "type": "token_committed", "mode": "LETTERS", "token": "I", "blink_sequence_sec": [0.10387110710144043, 0.17218971252441406], "transcript": "Existing Conditions PHTI", "prompt": null}
+{"ts": 1768740608.9922225, "type": "blink_recorded", "blink_duration_sec": 0.2698373794555664}
+{"ts": 1768740609.3136556, "type": "blink_recorded", "blink_duration_sec": 0.16003847122192383}
+{"ts": 1768740610.313667, "type": "token_committed", "mode": "LETTERS", "token": "I", "blink_sequence_sec": [0.2698373794555664, 0.16003847122192383], "transcript": "Existing Conditions PHTI", "prompt": null}
+{"ts": 1768740611.015025, "type": "blink_recorded", "blink_duration_sec": 0.06918120384216309}
+{"ts": 1768740612.8224437, "type": "blink_recorded", "blink_duration_sec": 0.20194458961486816}
+{"ts": 1768740613.8097682, "type": "blink_recorded", "blink_duration_sec": 0.6475703716278076}
+{"ts": 1768740614.8338952, "type": "token_committed", "mode": "LETTERS", "token": "A", "blink_sequence_sec": [0.20194458961486816, 0.6475703716278076], "transcript": "Existing Conditions PHTA", "prompt": null}
+{"ts": 1768740621.081782, "type": "blink_recorded", "blink_duration_sec": 0.09208011627197266}
+{"ts": 1768740622.089746, "type": "blink_recorded", "blink_duration_sec": 0.5467021465301514}
+{"ts": 1768740623.0210166, "type": "blink_recorded", "blink_duration_sec": 0.5459921360015869}
+{"ts": 1768740623.9400334, "type": "blink_recorded", "blink_duration_sec": 0.5459935665130615}
+{"ts": 1768740624.7599092, "type": "blink_recorded", "blink_duration_sec": 0.4779815673828125}
+{"ts": 1768740625.7840312, "type": "token_committed", "mode": "LETTERS", "token": "+", "blink_sequence_sec": [0.09208011627197266, 0.5467021465301514, 0.5459921360015869, 0.5459935665130615, 0.4779815673828125], "transcript": "Existing Conditions PHTA+", "prompt": null}
+{"ts": 1768740634.0020113, "type": "blink_recorded", "blink_duration_sec": 0.6824593544006348}
+{"ts": 1768740635.063872, "type": "blink_recorded", "blink_duration_sec": 0.6837632656097412}
+{"ts": 1768740636.0818858, "type": "token_committed", "mode": "LETTERS", "token": "M", "blink_sequence_sec": [0.6824593544006348, 0.6837632656097412], "transcript": "Existing Conditions PHTA+M", "prompt": null}
+{"ts": 1768740639.6297445, "type": "blink_recorded", "blink_duration_sec": 0.15369510650634766}
+{"ts": 1768740639.9375017, "type": "blink_recorded", "blink_duration_sec": 0.16764187812805176}
+{"ts": 1768740640.9248915, "type": "blink_recorded", "blink_duration_sec": 0.6139276027679443}
+{"ts": 1768740641.9489112, "type": "token_committed", "mode": "LETTERS", "token": "U", "blink_sequence_sec": [0.15369510650634766, 0.16764187812805176, 0.6139276027679443], "transcript": "Existing Conditions PHTA+MU", "prompt": null}
+{"ts": 1768740646.5552523, "type": "blink_recorded", "blink_duration_sec": 0.6140661239624023}
+{"ts": 1768740647.2611954, "type": "blink_recorded", "blink_duration_sec": 0.4137589931488037}
+{"ts": 1768740647.848593, "type": "blink_recorded", "blink_duration_sec": 0.20508956909179688}
+{"ts": 1768740648.8731623, "type": "token_committed", "mode": "LETTERS", "token": "D", "blink_sequence_sec": [0.6140661239624023, 0.4137589931488037, 0.20508956909179688], "transcript": "Existing Conditions PHTA+MUD", "prompt": null}
+{"ts": 1768740652.2173805, "type": "blink_recorded", "blink_duration_sec": 0.10261797904968262}
+{"ts": 1768740653.3776171, "type": "blink_recorded", "blink_duration_sec": 0.7839376926422119}
+{"ts": 1768740654.39736, "type": "token_committed", "mode": "LETTERS", "token": "A", "blink_sequence_sec": [0.10261797904968262, 0.7839376926422119], "transcript": "Existing Conditions PHTA+MUDA", "prompt": null}
+{"ts": 1768740658.525484, "type": "word_boundary_commit", "word": "PHTA+MUDA", "mode": "CHAR", "transcript": "Existing Conditions PHTA+MUDA", "prompt": null}
+{"ts": 1768740662.9568415, "type": "blink_recorded", "blink_duration_sec": 0.0951700210571289}
+{"ts": 1768740664.6328266, "type": "blink_recorded", "blink_duration_sec": 0.5448269844055176}
+{"ts": 1768740665.0715504, "type": "blink_recorded", "blink_duration_sec": 0.30196428298950195}
+{"ts": 1768740665.4814537, "type": "blink_recorded", "blink_duration_sec": 0.23996591567993164}
+{"ts": 1768740668.7969398, "type": "blink_recorded", "blink_duration_sec": 0.10841870307922363}
+{"ts": 1768740669.814049, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.10841870307922363], "transcript": "Existing Conditions PHTA+MUD E", "prompt": null}
+{"ts": 1768740670.3931959, "type": "blink_recorded", "blink_duration_sec": 0.22565317153930664}
+{"ts": 1768740671.2820961, "type": "blink_recorded", "blink_duration_sec": 0.10390162467956543}
+{"ts": 1768740672.2896786, "type": "token_committed", "mode": "CHAR", "token": "I", "blink_sequence_sec": [0.22565317153930664, 0.10390162467956543], "transcript": "Existing Conditions PHTA+MUD EI", "prompt": null}
+{"ts": 1768740676.2929752, "type": "word_boundary_commit", "word": "EI", "mode": "CHAR", "transcript": "Existing Conditions PHTA+MUD EI", "prompt": null}
+{"ts": 1768740676.4628832, "type": "blink_recorded", "blink_duration_sec": 0.06969571113586426}
+{"ts": 1768740677.4881258, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.06969571113586426], "transcript": "Existing Conditions PHTA+MUD EI E", "prompt": null}
+{"ts": 1768740679.6711302, "type": "blink_recorded", "blink_duration_sec": 0.35024046897888184}
+{"ts": 1768740680.6933167, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.35024046897888184], "transcript": "Existing Conditions PHTA+MUD EI EE", "prompt": null}
+{"ts": 1768740684.7165291, "type": "word_boundary_commit", "word": "EE", "mode": "CHAR", "transcript": "Existing Conditions PHTA+MUD EI EE", "prompt": null}
+{"ts": 1768740719.7302148, "type": "blink_recorded", "blink_duration_sec": 0.0883331298828125}
+{"ts": 1768740720.7517066, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.0883331298828125], "transcript": "Existing Conditions PHTA+MUD EI EE E", "prompt": null}
+{"ts": 1768740724.7525766, "type": "word_boundary_commit", "word": "E", "mode": "CHAR", "transcript": "Existing Conditions PHTA+MUD EI EE E", "prompt": null}
+{"ts": 1768740758.819741, "type": "blink_recorded", "blink_duration_sec": 0.06445527076721191}
+{"ts": 1768740760.43345, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.06445527076721191], "transcript": "Existing Conditions PHTA+MUD EI EE E E", "prompt": null}
+{"ts": 1768740764.4354868, "type": "word_boundary_commit", "word": "E", "mode": "CHAR", "transcript": "Existing Conditions PHTA+MUD EI EE E E", "prompt": null}
+{"ts": 1768740771.0374048, "type": "blink_recorded", "blink_duration_sec": 0.28806591033935547}
+{"ts": 1768740772.05781, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.28806591033935547], "transcript": "Existing Conditions PHTA+MUD EI EE E E E", "prompt": null}
+{"ts": 1768740772.7386544, "type": "blink_recorded", "blink_duration_sec": 0.08570408821105957}
+{"ts": 1768740773.760589, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.08570408821105957], "transcript": "Existing Conditions PHTA+MUD EI EE E E EE", "prompt": null}
+{"ts": 1768740777.7612317, "type": "word_boundary_commit", "word": "EE", "mode": "CHAR", "transcript": "Existing Conditions PHTA+MUD EI EE E E EE", "prompt": null}

@@ -1,0 +1,27 @@
+{"ts": 1768739862.4689784, "type": "blink_recorded", "blink_duration_sec": 0.20131206512451172}
+{"ts": 1768739863.495313, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.20131206512451172], "transcript": "Test", "prompt": null}
+{"ts": 1768739883.5507572, "type": "blink_recorded", "blink_duration_sec": 0.13719868659973145}
+{"ts": 1768739883.8287268, "type": "blink_recorded", "blink_duration_sec": 0.09442400932312012}
+{"ts": 1768739884.84901, "type": "token_committed", "mode": "WORD", "token": "Units Needed", "blink_sequence_sec": [0.13719868659973145, 0.09442400932312012], "transcript": "Test Units Needed", "prompt": null}
+{"ts": 1768739895.6266596, "type": "blink_recorded", "blink_duration_sec": 0.1248626708984375}
+{"ts": 1768739896.1008387, "type": "blink_recorded", "blink_duration_sec": 0.13661527633666992}
+{"ts": 1768739897.0903203, "type": "blink_recorded", "blink_duration_sec": 0.6658556461334229}
+{"ts": 1768739897.4648604, "type": "blink_recorded", "blink_duration_sec": 0.10076236724853516}
+{"ts": 1768739898.4747617, "type": "token_committed", "mode": "WORD", "token": "Warrant/Record Check", "blink_sequence_sec": [0.1248626708984375, 0.13661527633666992, 0.6658556461334229, 0.10076236724853516], "transcript": "Test Units Needed Warrant/Record Check", "prompt": null}
+{"ts": 1768739903.2645717, "type": "blink_recorded", "blink_duration_sec": 0.06789159774780273}
+{"ts": 1768739904.297639, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.06789159774780273], "transcript": "Test Units Needed Warrant/Record Check Test", "prompt": null}
+{"ts": 1768739906.6104977, "type": "blink_recorded", "blink_duration_sec": 0.30742335319519043}
+{"ts": 1768739907.6325595, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.30742335319519043], "transcript": "Test Units Needed Warrant/Record Check Test Test", "prompt": null}
+{"ts": 1768739912.4728425, "type": "blink_recorded", "blink_duration_sec": 0.8859033584594727}
+{"ts": 1768739913.4958236, "type": "token_committed", "mode": "WORD", "token": "Chase", "blink_sequence_sec": [0.8859033584594727], "transcript": "Test Units Needed Warrant/Record Check Test Test Chase", "prompt": null}
+{"ts": 1768739922.1579022, "type": "blink_recorded", "blink_duration_sec": 0.10002851486206055}
+{"ts": 1768739923.1806557, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.10002851486206055], "transcript": "Test Units Needed Warrant/Record Check Test Test Chase Test", "prompt": null}
+{"ts": 1768739926.8991683, "type": "blink_recorded", "blink_duration_sec": 0.10433363914489746}
+{"ts": 1768739927.9102058, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.10433363914489746], "transcript": "Test Units Needed Warrant/Record Check Test Test Chase Test Test", "prompt": null}
+{"ts": 1768739929.2183466, "type": "blink_recorded", "blink_duration_sec": 0.10561299324035645}
+{"ts": 1768739929.457856, "type": "blink_recorded", "blink_duration_sec": 0.08571052551269531}
+{"ts": 1768739930.48017, "type": "token_committed", "mode": "WORD", "token": "Units Needed", "blink_sequence_sec": [0.10561299324035645, 0.08571052551269531], "transcript": "Test Units Needed Warrant/Record Check Test Test Chase Test Test Units Needed", "prompt": null}
+{"ts": 1768739937.5056887, "type": "blink_recorded", "blink_duration_sec": 0.1365494728088379}
+{"ts": 1768739938.5285394, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.1365494728088379], "transcript": "Test Units Needed Warrant/Record Check Test Test Chase Test Test Units Needed Test", "prompt": null}
+{"ts": 1768739949.1699224, "type": "blink_recorded", "blink_duration_sec": 0.1380007266998291}
+{"ts": 1768739950.1937144, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.1380007266998291], "transcript": "Test Units Needed Warrant/Record Check Test Test Chase Test Test Units Needed Test Test", "prompt": null}

@@ -35,6 +35,8 @@ HISTORY_SIZE = (300, 600)
 # Header buttons
 AUDIO_BTN_RECT = (600, 10, 780, 50)  # x1,y1,x2,y2
 MODE_BTN_RECT = (800, 10, 980, 50)
+WORD_CMD_BTN_RECT = (400, 10, 580, 50)
+WORD_CMD_PANEL_RECT = (40, 80, 960, 620)
 
 # Timing Thresholds
 CHAR_PAUSE_THRESHOLD = 1.0  
@@ -255,6 +257,59 @@ MORSE_TABLE = {
     "----.": "9",
 }
 
+# Fixed Morse codes for each LSTM word index (code is immutable; word text is editable)
+WORD_COMMAND_CODES = {
+    0: ".-..-.",
+    1: ".----.",
+    2: "-.--.",
+    3: "-.--.-",
+    4: ".-.-.",
+    5: "--..--",
+    6: "-....-",
+    7: ".-.-.-",
+    8: "-..-.",
+    9: "-----",
+    10: ".----",
+    11: "..---",
+    12: "...--",
+    13: "....-",
+    14: ".....",
+    15: "-....",
+    16: "--...",
+    17: "---..",
+    18: "----.",
+    19: "---...",
+    20: "-...-",
+    21: "..--..",
+    22: ".--.-.",
+    23: ".-",
+    24: "-...",
+    25: "-.-.",
+    26: "-..",
+    27: ".",
+    28: "..-.",
+    29: "--.",
+    30: "....",
+    31: "..",
+    32: ".---",
+    33: "-.-",
+    34: ".-..",
+    35: "--",
+    36: "-.",
+    37: "---",
+    38: ".--.",
+    39: "--.-",
+    40: ".-.",
+    41: "...",
+    42: "-",
+    43: "..-",
+    44: "...-",
+    45: ".--",
+    46: "-..-",
+    47: "-.--",
+    48: "--..",
+}
+
 
 def decode_morse_tokens(tokens: list[str]) -> str:
     """Decode a list of morse letter tokens into text.
@@ -302,6 +357,8 @@ except Exception as e:
 # State for Mode Switching
 current_mode = "WORD"  # WORD | CHAR | BUFFER | LETTERS
 idx_to_label = idx_to_word
+show_word_commands = False
+pending_click = None
 
 def toggle_audio_mode():
     global current_audio_mode
@@ -314,7 +371,7 @@ def toggle_audio_mode():
     print(f"Switched to {current_audio_mode} audio")
 
 def toggle_mode():
-    global current_mode, idx_to_label
+    global current_mode, idx_to_label, show_word_commands
     if current_mode == "WORD":
         current_mode = "CHAR"
         idx_to_label = idx_to_char
@@ -327,12 +384,17 @@ def toggle_mode():
     else:
         current_mode = "WORD"
         idx_to_label = idx_to_word
+    if current_mode != "WORD":
+        show_word_commands = False
     print(f"Switched to {current_mode} mode")
 
 def mouse_callback(event, x, y, flags, param):
+    global pending_click, show_word_commands
     if event == cv2.EVENT_LBUTTONDOWN:
+        pending_click = (x, y)
         ax1, ay1, ax2, ay2 = AUDIO_BTN_RECT
         mx1, my1, mx2, my2 = MODE_BTN_RECT
+        wx1, wy1, wx2, wy2 = WORD_CMD_BTN_RECT
 
         if ax1 <= x <= ax2 and ay1 <= y <= ay2:
             toggle_audio_mode()
@@ -341,6 +403,10 @@ def mouse_callback(event, x, y, flags, param):
         if mx1 <= x <= mx2 and my1 <= y <= my2:
             toggle_mode()
 
+
+        if current_mode == "WORD" and wx1 <= x <= wx2 and wy1 <= y <= wy2:
+            show_word_commands = not show_word_commands
+            return
 # Load models with flexible provider selection
 def create_session(path):
     try:
@@ -411,6 +477,7 @@ def get_yaw_ratio(landmarks):
 #           MAIN LOOP
 # ==========================================
 def main():
+    global show_word_commands, pending_click, idx_to_label
     current_cam_idx = 0
     cap = cv2.VideoCapture(current_cam_idx)
     is_closed = False
@@ -421,6 +488,10 @@ def main():
     current_blink_sequence = []
     last_blink_duration = 0.0
     decoded_history = [] # List of strings instead of single string
+    selected_command_idx = None
+    editing_active = False
+    edit_buffer = ""
+    row_hitboxes = []
 
     # Word/sentence assembly (CHAR mode builds words from letters)
     current_word = ""
@@ -541,6 +612,39 @@ def main():
 
         # Prevent accidental dot/dash inputs immediately after a backspace gesture.
         input_block_until = max(input_block_until, now_ts + POST_BACKSPACE_INPUT_BLOCK_SEC)
+
+    def commit_word_edit():
+        nonlocal editing_active, edit_buffer, selected_command_idx
+        global idx_to_label
+        if selected_command_idx is None:
+            return
+        new_word = edit_buffer.strip()
+        if not new_word:
+            editing_active = False
+            return
+
+        old_word = idx_to_word.get(selected_command_idx, "")
+        if new_word == old_word:
+            editing_active = False
+            return
+
+        # Drop any existing entries that would conflict, then set new text for this idx
+        for key in list(word_map.keys()):
+            if word_map[key] == selected_command_idx or key == new_word:
+                word_map.pop(key, None)
+
+        word_map[new_word] = selected_command_idx
+        idx_to_word[selected_command_idx] = new_word
+        if current_mode == "WORD":
+            idx_to_label = idx_to_word
+
+        try:
+            with open(LABEL_MAP_PATH, "w", encoding="utf-8") as f:
+                json.dump(word_map, f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            print(f"Failed to save word map: {e}")
+
+        editing_active = False
     
     print("System Ready! SAPI TTS & Timers Enabled.")
     
@@ -563,6 +667,14 @@ def main():
         eye_state = "OPEN"
         cnn_val = 1 # Debug raw value
         now = time.time()
+
+        if current_mode != "WORD":
+            show_word_commands = False
+            editing_active = False
+            selected_command_idx = None
+        elif not show_word_commands:
+            editing_active = False
+            selected_command_idx = None
 
         if results.multi_face_landmarks:
             landmarks = results.multi_face_landmarks[0].landmark
@@ -817,6 +929,7 @@ def main():
         # --- UI DRAWING ---
         # Create Canvas
         canvas = np.ones((WINDOW_HEIGHT, WINDOW_WIDTH, 3), dtype=np.uint8) * 240 # Light gray background
+        row_hitboxes = []
 
         # Header
         cv2.rectangle(canvas, (0, 0), (WINDOW_WIDTH, 60), (200, 200, 200), -1)
@@ -838,6 +951,18 @@ def main():
         cv2.rectangle(canvas, (ax1, ay1), (ax2, ay2), audio_color, -1)
         cv2.rectangle(canvas, (ax1, ay1), (ax2, ay2), (0, 0, 0), 1)
         cv2.putText(canvas, f"AUDIO: {current_audio_mode}", (ax1 + 10, ay2 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 2)
+
+        # Word command button (only active in WORD mode)
+        wx1, wy1, wx2, wy2 = WORD_CMD_BTN_RECT
+        cmd_color = (160, 160, 160)
+        cmd_label = "Show Word Command"
+        if current_mode == "WORD":
+            cmd_color = (170, 210, 240) if show_word_commands else (180, 200, 220)
+        else:
+            cmd_label = "Word Mode Only"
+        cv2.rectangle(canvas, (wx1, wy1), (wx2, wy2), cmd_color, -1)
+        cv2.rectangle(canvas, (wx1, wy1), (wx2, wy2), (0, 0, 0), 1)
+        cv2.putText(canvas, cmd_label, (wx1 + 8, wy2 - 12), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 0), 2)
 
         # Mode Button
         btn_color = (100, 200, 100) if current_mode == "WORD" else (100, 100, 200)
@@ -923,10 +1048,73 @@ def main():
             cv2.putText(canvas, item, (hx+10, y_offset), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 2)
             y_offset += 35
 
+        # Word command overlay (WORD mode only)
+        if current_mode == "WORD" and show_word_commands:
+            px1, py1, px2, py2 = WORD_CMD_PANEL_RECT
+            cv2.rectangle(canvas, (px1 - 4, py1 - 4), (px2 + 4, py2 + 4), (80, 80, 80), -1)
+            cv2.rectangle(canvas, (px1, py1), (px2, py2), (255, 255, 255), -1)
+            cv2.rectangle(canvas, (px1, py1), (px2, py2), (0, 0, 0), 2)
+
+            cv2.putText(canvas, "Word Commands (click a row to edit the word)", (px1 + 12, py1 + 28), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (0, 0, 0), 2)
+            cv2.putText(canvas, "Morse codes are fixed; type to change the word. Enter=save, Esc=cancel.", (px1 + 12, py1 + 52), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (60, 60, 60), 1)
+
+            commands = []
+            for idx in sorted(WORD_COMMAND_CODES.keys()):
+                commands.append({
+                    "idx": idx,
+                    "code": WORD_COMMAND_CODES[idx],
+                    "word": idx_to_word.get(idx, f"[{idx}]")
+                })
+
+            rows_per_col = 25
+            row_height = 18
+            col_width = (px2 - px1 - 40) // 2
+            start_y = py1 + 70
+
+            for i, cmd in enumerate(commands):
+                col = i // rows_per_col
+                row = i % rows_per_col
+                x = px1 + 20 + col * col_width
+                y = start_y + row * row_height
+                row_rect = (x, y - 16, x + col_width - 10, y + 4)
+                if selected_command_idx == cmd["idx"]:
+                    cv2.rectangle(canvas, (row_rect[0], row_rect[1]), (row_rect[2], row_rect[3]), (210, 230, 255), -1)
+                cv2.putText(canvas, f"{cmd['idx']:02d}  {cmd['code']:7s}  {cmd['word']}", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 0), 1)
+                row_hitboxes.append((cmd["idx"], row_rect))
+
+            if editing_active and selected_command_idx is not None:
+                cv2.putText(canvas, f"Editing {selected_command_idx}: {edit_buffer}", (px1 + 12, py2 - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 180), 2)
+
+        if pending_click is not None:
+            px, py = pending_click
+            pending_click = None
+            if current_mode == "WORD" and show_word_commands:
+                for idx_val, rect in row_hitboxes:
+                    x1, y1, x2, y2 = rect
+                    if x1 <= px <= x2 and y1 <= py <= y2:
+                        selected_command_idx = idx_val
+                        edit_buffer = idx_to_word.get(idx_val, "")
+                        editing_active = True
+                        break
+
         cv2.imshow("LSTM Morse Decoder with TTS", canvas)
         
         key = cv2.waitKey(1) & 0xFF
         if key == ord('q'): break
+
+        if editing_active and current_mode == "WORD" and show_word_commands:
+            if key in (8, 127):
+                edit_buffer = edit_buffer[:-1]
+                continue
+            if key in (13, 10):
+                commit_word_edit()
+                continue
+            if key == 27:
+                editing_active = False
+                continue
+            if 32 <= key <= 126:
+                edit_buffer += chr(key)
+                continue
         # Backspace support: Backspace key is commonly 8 (sometimes 127). 'b' is a fallback.
         if key in (8, 127) or key == ord('b'):
             handle_backspace(now)

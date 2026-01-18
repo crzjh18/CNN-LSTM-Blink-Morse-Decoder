@@ -1,5 +1,4 @@
 {
-  "Signal Weak": 0,
   "Signal Good": 1,
   "Stop Transmitting": 2,
   "Affirmative": 3,
@@ -26,7 +25,7 @@
   "Report To/Meet": 24,
   "Estimated Time of Arrival": 25,
   "License Information": 26,
-  "Registration Information": 27,
+  "Test": 27,
   "Warrant/Record Check": 28,
   "Danger/Caution": 29,
   "Pick Up": 30,
@@ -47,5 +46,6 @@
   "Bank Alarm": 45,
   "Complete Assignment": 46,
   "Detaining Subject/Expedite": 47,
-  "Drag Racing": 48
+  "Drag Racing": 48,
+  "Evil Mojo Threw so Hard": 0
 }

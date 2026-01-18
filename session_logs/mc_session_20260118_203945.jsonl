@@ -1,0 +1,9 @@
+{"ts": 1768739996.5612667, "type": "blink_recorded", "blink_duration_sec": 0.06821060180664062}
+{"ts": 1768739997.5853202, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.06821060180664062], "transcript": "Test", "prompt": null}
+{"ts": 1768739998.677448, "type": "blink_recorded", "blink_duration_sec": 0.10747766494750977}
+{"ts": 1768739998.9898367, "type": "blink_recorded", "blink_duration_sec": 0.1723945140838623}
+{"ts": 1768740000.0108492, "type": "token_committed", "mode": "WORD", "token": "Units Needed", "blink_sequence_sec": [0.10747766494750977, 0.1723945140838623], "transcript": "Test Units Needed", "prompt": null}
+{"ts": 1768740008.7387483, "type": "blink_recorded", "blink_duration_sec": 0.6479499340057373}
+{"ts": 1768740009.2830224, "type": "blink_recorded", "blink_duration_sec": 0.2065904140472412}
+{"ts": 1768740010.3089871, "type": "blink_recorded", "blink_duration_sec": 0.6496422290802002}
+{"ts": 1768740011.3334236, "type": "token_committed", "mode": "WORD", "token": "Time", "blink_sequence_sec": [0.6479499340057373, 0.2065904140472412, 0.6496422290802002], "transcript": "Test Units Needed Time", "prompt": null}
