@@ -1,0 +1,5 @@
+{"ts": 1769009007.956762, "type": "blink_recorded", "blink_duration_sec": 0.10866832733154297}
+{"ts": 1769009008.963428, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.10866832733154297], "transcript": "Test", "prompt": null}
+{"ts": 1769009010.3285613, "type": "blink_recorded", "blink_duration_sec": 0.08463168144226074}
+{"ts": 1769009011.3332236, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.08463168144226074], "transcript": "Test Test", "prompt": null}
+{"ts": 1769009081.0394032, "type": "gesture_speak_sentence", "blink_duration_sec": 67.81883144378662, "mode": "WORD", "transcript": "Test Test", "prompt": null}

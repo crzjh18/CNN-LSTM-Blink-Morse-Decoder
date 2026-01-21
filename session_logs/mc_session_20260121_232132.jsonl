@@ -1,0 +1,6 @@
+{"ts": 1769008908.2251198, "type": "blink_recorded", "blink_duration_sec": 0.2789134979248047}
+{"ts": 1769008908.6262047, "type": "blink_recorded", "blink_duration_sec": 0.0916290283203125}
+{"ts": 1769008909.6513765, "type": "token_committed", "mode": "WORD", "token": "Units Needed", "blink_sequence_sec": [0.2789134979248047, 0.0916290283203125], "transcript": "Units Needed", "prompt": null}
+{"ts": 1769008911.5862157, "type": "blink_recorded", "blink_duration_sec": 0.07862710952758789}
+{"ts": 1769008912.767642, "type": "blink_recorded", "blink_duration_sec": 0.647580623626709}
+{"ts": 1769008913.7938058, "type": "token_committed", "mode": "WORD", "token": "Assignment Completed", "blink_sequence_sec": [0.07862710952758789, 0.647580623626709], "transcript": "Assignment Completed", "prompt": null}

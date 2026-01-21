@@ -27,8 +27,8 @@ WINDOW_HEIGHT = 720
 
 # Panel Rects (x, y, w, h)
 HEADER_HEIGHT = 70
-VIDEO_PANEL = (20, 90, 800, 450)
-TRANS_PANEL = (20, 560, 800, 140)
+VIDEO_PANEL = (20, 90, 800, 420)
+TRANS_PANEL = (20, 520, 800, 180)
 HISTORY_PANEL = (840, 90, 420, 610)
 
 # Button Config (Header)
@@ -87,7 +87,7 @@ WORD_PAUSE_GRACE = 2.0
 SENTENCE_SPEAK_BLINK_SEC = 2.0  # long blink gesture: speak the full current transcript
 BATCH_COMMIT_BLINK_SEC = 2.0    # long blink gesture: decode buffered Morse
 MIN_OPEN_STABILITY = 0.1 # seconds; debounce time to ignore blink glitches
-DOT_DASH_THRESHOLD = 0.52  # split between dot and dash durations (sec)
+DOT_DASH_THRESHOLD = 0.55  # split between dot and dash durations (sec)
 
 # Evaluation / logging (SOP4 support)
 EVAL_PROMPT_MODE = False           # If True: show prompts, score attempts, log metrics
@@ -126,6 +126,9 @@ speech_queue = queue.Queue()
 # - BEEP: play short/long beeps matching Morse input (dot/dash)
 current_audio_mode = "TTS"  # "TTS" | "MUTE" | "BEEP"
 
+# TTS speed (SAPI Rate range is roughly -10..10; positive is faster)
+TTS_RATE = 4
+
 # Morse beep settings (Windows)
 BEEP_FREQ_HZ = 880
 DOT_BEEP_MS = 120
@@ -161,6 +164,11 @@ def speech_worker():
     try:
         # Initialize the native Windows voice engine directly
         speaker = win32com.client.Dispatch("SAPI.SpVoice")
+        # Speed up speech for words, letters, and dot/dash cues
+        try:
+            speaker.Rate = TTS_RATE
+        except Exception:
+            pass
     except Exception as e:
         print(f"SAPI Initialization Error: {e}")
         return
@@ -483,7 +491,7 @@ def draw_button(canvas, rect, text, active=False, color=None):
     ty = y + (h + th) // 2
     cv2.putText(canvas, text, (tx, ty), font, 0.5, txt_col, 1, cv2.LINE_AA)
 
-def draw_progress_bar(canvas, rect, progress, threshold=0.52):
+def draw_progress_bar(canvas, rect, progress, threshold=DOT_DASH_THRESHOLD):
     x, y, w, h = rect
     # Track
     cv2.rectangle(canvas, (x, y), (x+w, y+h), (70, 70, 70), -1)
@@ -500,6 +508,24 @@ def draw_progress_bar(canvas, rect, progress, threshold=0.52):
     # Threshold marker
     marker_x = x + int(w * threshold)
     cv2.line(canvas, (marker_x, y-2), (marker_x, y+h+2), (0,0,0), 2)
+
+def wrap_text_for_width(text: str, max_width: int, font, font_scale: float, thickness: int) -> list[str]:
+    """Wrap text into multiple lines so it fits within max_width for the given font settings."""
+    words = text.split()
+    lines: list[str] = []
+    current = ""
+    for w in words:
+        candidate = w if not current else f"{current} {w}"
+        (cw, _), _ = cv2.getTextSize(candidate, font, font_scale, thickness)
+        if cw <= max_width:
+            current = candidate
+        else:
+            if current:
+                lines.append(current)
+            current = w
+    if current:
+        lines.append(current)
+    return lines if lines else ["_"]
 
 def mouse_callback(event, x, y, flags, param):
     global pending_click, show_word_commands
@@ -520,6 +546,17 @@ def create_session(path):
 
 lstm_sess = create_session(LSTM_MODEL_PATH)
 lstm_inputs = {i.name: i for i in lstm_sess.get_inputs()}
+lstm_providers = lstm_sess.get_providers()
+lstm_call_count = 0
+last_lstm_debug = {
+    "ts": 0.0,
+    "mode": "",
+    "seq_len": 0,
+    "pred_idx": None,
+    "pred_label": "",
+    "blink_seq": [],
+    "provider": lstm_providers,
+}
 
 ort_session = create_session(CNN_MODEL_PATH)
 cnn_input_name = ort_session.get_inputs()[0].name
@@ -542,8 +579,12 @@ def preprocess_cnn(crop):
     norm = (norm - 0.5) / 0.5
     return np.expand_dims(np.expand_dims(norm, axis=0), axis=0)
 
-def predict_letter(raw_durations):
-    if not raw_durations: return ""
+def predict_letter(raw_durations, mode_name: str):
+    """Run the blink-duration LSTM and capture debug context so we can verify it runs."""
+    global lstm_call_count, last_lstm_debug
+    if not raw_durations:
+        return ""
+
     # Shape to (1, T, 1) as expected by LSTM
     arr = np.array([[min(d, 2.0) for d in raw_durations]], dtype=np.float32)[:, :, None]
     feed = {"input": arr}
@@ -552,7 +593,22 @@ def predict_letter(raw_durations):
     
     logits = lstm_sess.run(None, feed)[0]
     pred_idx = int(np.argmax(logits, axis=1)[0])
-    return idx_to_label.get(pred_idx, "?")
+    pred = idx_to_label.get(pred_idx, "?")
+
+    lstm_call_count += 1
+    last_lstm_debug = {
+        "ts": time.time(),
+        "mode": mode_name,
+        "seq_len": int(arr.shape[1]),
+        "pred_idx": pred_idx,
+        "pred_label": pred,
+        "blink_seq": [round(float(d), 3) for d in raw_durations],
+        "provider": lstm_providers,
+    }
+
+    # Console hint so it's obvious the LSTM is executing
+    print(f"LSTM inference #{lstm_call_count} [{mode_name}] -> {pred} (idx {pred_idx}) seq_len={arr.shape[1]} durations={last_lstm_debug['blink_seq']}")
+    return pred
 
 def get_eye_crop(frame, landmarks, w, h):
     pts = [(int(landmarks[i].x * w), int(landmarks[i].y * h)) for i in LEFT_EYE]
@@ -952,7 +1008,7 @@ def main():
                     current_morse_token = ""
                     last_token_time = now
             else:
-                predicted = predict_letter(current_blink_sequence)
+                predicted = predict_letter(current_blink_sequence, current_mode)
 
                 if predicted and predicted != "?":
                     if current_mode in ("CHAR", "LETTERS"):
@@ -1112,19 +1168,37 @@ def main():
         # Sequence String
         seq_str = ""
         if current_mode == "BUFFER":
-             parts = buffered_tokens.copy()
-             if current_morse_token: parts.append(current_morse_token)
-             seq_str = " ".join(parts)
+            parts = buffered_tokens.copy()
+            if current_morse_token: parts.append(current_morse_token)
+            seq_str = " ".join(parts)
         else:
-             for d in current_blink_sequence:
-                 seq_str += " _ " if d >= DOT_DASH_THRESHOLD else " . "
-        
-        cv2.putText(canvas, seq_str, (tx+20, ty+70), cv2.FONT_HERSHEY_SIMPLEX, 0.6, COLORS["text_muted"], 1, cv2.LINE_AA)
-        
-        # Current Word/Text
-        full_line = " ".join(transcript_words[-4:] + ([current_word] if current_word else []))
-        if not full_line: full_line = "_"
-        cv2.putText(canvas, full_line, (tx+20, ty+110), cv2.FONT_HERSHEY_SIMPLEX, 1.2, COLORS["text_main"], 2, cv2.LINE_AA)
+            for d in current_blink_sequence:
+                seq_str += " _ " if d >= DOT_DASH_THRESHOLD else " . "
+    
+        cv2.putText(canvas, seq_str, (tx+20, ty+64), cv2.FONT_HERSHEY_SIMPLEX, 0.6, COLORS["text_muted"], 1, cv2.LINE_AA)
+    
+        # Current Word/Text (wrapped to fit panel)
+        full_line = " ".join(transcript_words[-6:] + ([current_word] if current_word else []))
+        font = cv2.FONT_HERSHEY_SIMPLEX
+        font_scale = 1.1
+        thickness = 2
+        max_text_width = tw - 40
+        wrapped_lines = wrap_text_for_width(full_line or "_", max_text_width, font, font_scale, thickness)
+        line_y = ty + 98
+        line_spacing = 28
+        for line in wrapped_lines[:4]:  # cap lines to avoid overflow
+            cv2.putText(canvas, line, (tx+20, line_y), font, font_scale, COLORS["text_main"], thickness, cv2.LINE_AA)
+            line_y += line_spacing
+
+        # LSTM usage breadcrumb so we can visually verify the model is being invoked
+        if last_lstm_debug["ts"] > 0:
+            dbg = last_lstm_debug
+            dbg_time = datetime.fromtimestamp(dbg["ts"]).strftime("%H:%M:%S")
+            dbg_line1 = f"LSTM {dbg['mode']} #{lstm_call_count}: {dbg['pred_label']} (idx {dbg['pred_idx']}, len {dbg['seq_len']})"
+            seq_preview = " ".join([f"{d:.2f}" for d in dbg["blink_seq"][-6:]])
+            dbg_line2 = f"{dbg_time} seq: {seq_preview}" if seq_preview else f"{dbg_time} seq: -"
+            cv2.putText(canvas, dbg_line1, (tx+20, ty+128), cv2.FONT_HERSHEY_SIMPLEX, 0.45, COLORS["text_muted"], 1, cv2.LINE_AA)
+            cv2.putText(canvas, dbg_line2, (tx+20, ty+142), cv2.FONT_HERSHEY_SIMPLEX, 0.45, COLORS["text_muted"], 1, cv2.LINE_AA)
 
         # 4. History Panel
         hx, hy, hw, hh = HISTORY_PANEL
@@ -1214,6 +1288,13 @@ def main():
         
         key = cv2.waitKey(1) & 0xFF
         if key == ord('q'): break
+
+        # Allow ESC to close the Library overlay even when not editing
+        if key == 27 and show_word_commands:
+            show_word_commands = False
+            editing_active = False
+            selected_command_idx = None
+            continue
         
         # Typing logic
         if editing_active and show_word_commands:

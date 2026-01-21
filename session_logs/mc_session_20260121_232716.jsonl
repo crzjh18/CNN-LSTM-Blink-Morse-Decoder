@@ -1,0 +1,44 @@
+{"ts": 1769009239.6756377, "type": "blink_recorded", "blink_duration_sec": 0.31388163566589355}
+{"ts": 1769009240.9149683, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.31388163566589355], "transcript": "Test", "prompt": null}
+{"ts": 1769009241.2201996, "type": "blink_recorded", "blink_duration_sec": 0.07601070404052734}
+{"ts": 1769009242.254411, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.07601070404052734], "transcript": "Test Test", "prompt": null}
+{"ts": 1769009247.342851, "type": "blink_recorded", "blink_duration_sec": 0.07988095283508301}
+{"ts": 1769009248.3688872, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.07988095283508301], "transcript": "Test", "prompt": null}
+{"ts": 1769009250.1820872, "type": "blink_recorded", "blink_duration_sec": 0.07838702201843262}
+{"ts": 1769009251.1925876, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.07838702201843262], "transcript": "Test Test", "prompt": null}
+{"ts": 1769009256.3900926, "type": "blink_recorded", "blink_duration_sec": 0.08019232749938965}
+{"ts": 1769009257.641046, "type": "blink_recorded", "blink_duration_sec": 0.7587671279907227}
+{"ts": 1769009258.6574504, "type": "token_committed", "mode": "WORD", "token": "Assignment Completed", "blink_sequence_sec": [0.08019232749938965, 0.7587671279907227], "transcript": "Test Test Assignment Completed", "prompt": null}
+{"ts": 1769009265.170997, "type": "blink_recorded", "blink_duration_sec": 0.19528508186340332}
+{"ts": 1769009266.4864035, "type": "blink_recorded", "blink_duration_sec": 0.6319105625152588}
+{"ts": 1769009267.5104601, "type": "token_committed", "mode": "WORD", "token": "Assignment Completed", "blink_sequence_sec": [0.19528508186340332, 0.6319105625152588], "transcript": "Assignment Completed", "prompt": null}
+{"ts": 1769009268.8084784, "type": "blink_recorded", "blink_duration_sec": 0.6334707736968994}
+{"ts": 1769009269.3112571, "type": "blink_recorded", "blink_duration_sec": 0.11567497253417969}
+{"ts": 1769009269.7800074, "type": "blink_recorded", "blink_duration_sec": 0.1557483673095703}
+{"ts": 1769009270.0894952, "type": "blink_recorded", "blink_duration_sec": 0.15872740745544434}
+{"ts": 1769009271.107628, "type": "token_committed", "mode": "WORD", "token": "Report To/Meet", "blink_sequence_sec": [0.6334707736968994, 0.11567497253417969, 0.1557483673095703, 0.15872740745544434], "transcript": "Assignment Completed Report To/Meet", "prompt": null}
+{"ts": 1769009284.6466198, "type": "blink_recorded", "blink_duration_sec": 0.12634730339050293}
+{"ts": 1769009285.6483755, "type": "blink_recorded", "blink_duration_sec": 0.5102217197418213}
+{"ts": 1769009286.64935, "type": "token_committed", "mode": "WORD", "token": "Assignment Completed", "blink_sequence_sec": [0.12634730339050293, 0.5102217197418213], "transcript": "Assignment Completed", "prompt": null}
+{"ts": 1769009288.4184678, "type": "blink_recorded", "blink_duration_sec": 0.1281144618988037}
+{"ts": 1769009289.652365, "type": "blink_recorded", "blink_duration_sec": 0.6325185298919678}
+{"ts": 1769009290.6940632, "type": "token_committed", "mode": "WORD", "token": "Assignment Completed", "blink_sequence_sec": [0.1281144618988037, 0.6325185298919678], "transcript": "Assignment Completed", "prompt": null}
+{"ts": 1769009292.8477633, "type": "blink_recorded", "blink_duration_sec": 0.13367843627929688}
+{"ts": 1769009293.8862615, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.13367843627929688], "transcript": "Assignment Completed Test", "prompt": null}
+{"ts": 1769009300.6799424, "type": "blink_recorded", "blink_duration_sec": 0.17176008224487305}
+{"ts": 1769009301.8502393, "type": "blink_recorded", "blink_duration_sec": 0.6734988689422607}
+{"ts": 1769009302.8537328, "type": "token_committed", "mode": "WORD", "token": "Assignment Completed", "blink_sequence_sec": [0.17176008224487305, 0.6734988689422607], "transcript": "Assignment Completed", "prompt": null}
+{"ts": 1769009304.3623657, "type": "blink_recorded", "blink_duration_sec": 0.6885077953338623}
+{"ts": 1769009305.5105681, "type": "blink_recorded", "blink_duration_sec": 0.6734955310821533}
+{"ts": 1769009306.5120404, "type": "token_committed", "mode": "WORD", "token": "Larceny", "blink_sequence_sec": [0.6885077953338623, 0.6734955310821533], "transcript": "Assignment Completed Larceny", "prompt": null}
+{"ts": 1769009308.8148887, "type": "blink_recorded", "blink_duration_sec": 0.5628182888031006}
+{"ts": 1769009309.4533005, "type": "blink_recorded", "blink_duration_sec": 0.16423630714416504}
+{"ts": 1769009309.8974297, "type": "blink_recorded", "blink_duration_sec": 0.16873478889465332}
+{"ts": 1769009310.3445997, "type": "blink_recorded", "blink_duration_sec": 0.21478581428527832}
+{"ts": 1769009311.387598, "type": "token_committed", "mode": "WORD", "token": "Report To/Meet", "blink_sequence_sec": [0.5628182888031006, 0.16423630714416504, 0.16873478889465332, 0.21478581428527832], "transcript": "Assignment Completed Report To/Meet", "prompt": null}
+{"ts": 1769009336.619766, "type": "blink_recorded", "blink_duration_sec": 0.08562469482421875}
+{"ts": 1769009337.6593418, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.08562469482421875], "transcript": "Test", "prompt": null}
+{"ts": 1769009361.4186606, "type": "blink_recorded", "blink_duration_sec": 0.1280524730682373}
+{"ts": 1769009362.1828399, "type": "blink_recorded", "blink_duration_sec": 0.17077279090881348}
+{"ts": 1769009363.249298, "type": "blink_recorded", "blink_duration_sec": 0.595482349395752}
+{"ts": 1769009364.25075, "type": "token_committed", "mode": "WORD", "token": "Omaygah", "blink_sequence_sec": [0.1280524730682373, 0.17077279090881348, 0.595482349395752], "transcript": "Omaygah", "prompt": null}

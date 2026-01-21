@@ -1,0 +1,17 @@
+{"ts": 1769008816.662286, "type": "blink_recorded", "blink_duration_sec": 0.0846247673034668}
+{"ts": 1769008817.689785, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.0846247673034668], "transcript": "Test", "prompt": null}
+{"ts": 1769008818.2030585, "type": "blink_recorded", "blink_duration_sec": 0.12420320510864258}
+{"ts": 1769008819.225548, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.12420320510864258], "transcript": "Test Test", "prompt": null}
+{"ts": 1769008823.1467032, "type": "blink_recorded", "blink_duration_sec": 0.12769317626953125}
+{"ts": 1769008824.399001, "type": "blink_recorded", "blink_duration_sec": 0.5567655563354492}
+{"ts": 1769008825.4241595, "type": "token_committed", "mode": "WORD", "token": "Assignment Completed", "blink_sequence_sec": [0.12769317626953125, 0.5567655563354492], "transcript": "Assignment Completed", "prompt": null}
+{"ts": 1769008833.0834646, "type": "blink_recorded", "blink_duration_sec": 0.09564042091369629}
+{"ts": 1769008833.449984, "type": "blink_recorded", "blink_duration_sec": 0.08309721946716309}
+{"ts": 1769008833.8685424, "type": "blink_recorded", "blink_duration_sec": 0.11817526817321777}
+{"ts": 1769008835.0071998, "type": "blink_recorded", "blink_duration_sec": 0.4807288646697998}
+{"ts": 1769008836.0303028, "type": "token_committed", "mode": "LETTERS", "token": "H", "blink_sequence_sec": [0.09564042091369629, 0.08309721946716309, 0.11817526817321777, 0.4807288646697998], "transcript": "H", "prompt": null}
+{"ts": 1769008839.7053502, "type": "blink_recorded", "blink_duration_sec": 0.07961058616638184}
+{"ts": 1769008840.2952204, "type": "blink_recorded", "blink_duration_sec": 0.16775894165039062}
+{"ts": 1769008840.6146984, "type": "blink_recorded", "blink_duration_sec": 0.08160591125488281}
+{"ts": 1769008841.9143326, "type": "blink_recorded", "blink_duration_sec": 0.6590702533721924}
+{"ts": 1769008842.934406, "type": "token_committed", "mode": "LETTERS", "token": "V", "blink_sequence_sec": [0.07961058616638184, 0.16775894165039062, 0.08160591125488281, 0.6590702533721924], "transcript": "V", "prompt": null}
