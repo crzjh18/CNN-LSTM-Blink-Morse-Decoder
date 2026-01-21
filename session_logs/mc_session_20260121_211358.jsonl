@@ -1,0 +1,35 @@
+{"ts": 1769001244.9671254, "type": "blink_recorded", "blink_duration_sec": 1.4022080898284912}
+{"ts": 1769001245.2339277, "type": "blink_recorded", "blink_duration_sec": 0.06382989883422852}
+{"ts": 1769001246.2412846, "type": "token_committed", "mode": "WORD", "token": "Damage to Property", "blink_sequence_sec": [1.4022080898284912, 0.06382989883422852], "transcript": "Damage to Property", "prompt": null}
+{"ts": 1769001260.1302028, "type": "blink_recorded", "blink_duration_sec": 0.6262362003326416}
+{"ts": 1769001261.223089, "type": "blink_recorded", "blink_duration_sec": 0.17687177658081055}
+{"ts": 1769001262.515748, "type": "blink_recorded", "blink_duration_sec": 0.6243219375610352}
+{"ts": 1769001263.525869, "type": "token_committed", "mode": "WORD", "token": "Time", "blink_sequence_sec": [0.6262362003326416, 0.17687177658081055, 0.6243219375610352], "transcript": "Time", "prompt": null}
+{"ts": 1769001266.8698049, "type": "blink_recorded", "blink_duration_sec": 0.16401362419128418}
+{"ts": 1769001268.172793, "type": "blink_recorded", "blink_duration_sec": 0.6230027675628662}
+{"ts": 1769001269.4320705, "type": "blink_recorded", "blink_duration_sec": 0.6132645606994629}
+{"ts": 1769001270.4251044, "type": "blink_recorded", "blink_duration_sec": 0.3624730110168457}
+{"ts": 1769001271.4597888, "type": "token_committed", "mode": "WORD", "token": "Juvenile Case", "blink_sequence_sec": [0.16401362419128418, 0.6230027675628662, 0.6132645606994629, 0.3624730110168457], "transcript": "Time Juvenile Case", "prompt": null}
+{"ts": 1769001273.9157789, "type": "blink_recorded", "blink_duration_sec": 0.22299790382385254}
+{"ts": 1769001275.2008595, "type": "blink_recorded", "blink_duration_sec": 0.5961451530456543}
+{"ts": 1769001276.3228273, "type": "blink_recorded", "blink_duration_sec": 0.428009033203125}
+{"ts": 1769001277.6507733, "type": "blink_recorded", "blink_duration_sec": 0.7330031394958496}
+{"ts": 1769001278.6779523, "type": "token_committed", "mode": "WORD", "token": "Help Quick", "blink_sequence_sec": [0.22299790382385254, 0.5961451530456543, 0.428009033203125, 0.7330031394958496], "transcript": "Time Help Quick", "prompt": null}
+{"ts": 1769001281.810844, "type": "blink_recorded", "blink_duration_sec": 0.4559800624847412}
+{"ts": 1769001283.3129146, "type": "blink_recorded", "blink_duration_sec": 0.7818248271942139}
+{"ts": 1769001284.6988864, "type": "blink_recorded", "blink_duration_sec": 0.6429681777954102}
+{"ts": 1769001286.0799682, "type": "blink_recorded", "blink_duration_sec": 0.6506567001342773}
+{"ts": 1769001287.085886, "type": "token_committed", "mode": "WORD", "token": "Help Quick", "blink_sequence_sec": [0.4559800624847412, 0.7818248271942139, 0.6429681777954102, 0.6506567001342773], "transcript": "Time Help Quick", "prompt": null}
+{"ts": 1769001291.0348132, "type": "blink_recorded", "blink_duration_sec": 0.8008735179901123}
+{"ts": 1769001292.5894215, "type": "blink_recorded", "blink_duration_sec": 0.8029911518096924}
+{"ts": 1769001293.5470605, "type": "blink_recorded", "blink_duration_sec": 0.22498464584350586}
+{"ts": 1769001294.4149547, "type": "blink_recorded", "blink_duration_sec": 0.23604893684387207}
+{"ts": 1769001295.4398546, "type": "token_committed", "mode": "WORD", "token": "Drag Racing", "blink_sequence_sec": [0.8008735179901123, 0.8029911518096924, 0.22498464584350586, 0.23604893684387207], "transcript": "Time Help Quick Drag Racing", "prompt": null}
+{"ts": 1769001299.1837585, "type": "blink_recorded", "blink_duration_sec": 0.14702320098876953}
+{"ts": 1769001300.6144404, "type": "blink_recorded", "blink_duration_sec": 0.666187047958374}
+{"ts": 1769001301.8961484, "type": "blink_recorded", "blink_duration_sec": 0.648841142654419}
+{"ts": 1769001302.9138734, "type": "token_committed", "mode": "WORD", "token": "Bank Alarm", "blink_sequence_sec": [0.14702320098876953, 0.666187047958374, 0.648841142654419], "transcript": "Time Help Quick Drag Racing Bank Alarm", "prompt": null}
+{"ts": 1769001312.6922753, "type": "blink_recorded", "blink_duration_sec": 0.15808653831481934}
+{"ts": 1769001313.716704, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.15808653831481934], "transcript": "Time Test", "prompt": null}
+{"ts": 1769001315.7441134, "type": "blink_recorded", "blink_duration_sec": 0.1307837963104248}
+{"ts": 1769001316.745036, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.1307837963104248], "transcript": "Test", "prompt": null}

@@ -21,22 +21,63 @@ LSTM_MODEL_PATH = "blink_lstm.onnx"
 LABEL_MAP_PATH = "lstm_word_map.json"
 IMAGE_SIZE = (64, 64)
 
-# UI Layout Dimensions
-WINDOW_WIDTH = 1000
-WINDOW_HEIGHT = 700
-VIDEO_WIDTH = 640
-VIDEO_HEIGHT = 480
-VIDEO_POS = (20, 80)
-TRANS_FIELD_POS = (20, 580)
-TRANS_FIELD_SIZE = (640, 100)
-HISTORY_POS = (680, 80)
-HISTORY_SIZE = (300, 600)
+# --- NEW UI DIMENSIONS & LAYOUT ---
+WINDOW_WIDTH = 1280
+WINDOW_HEIGHT = 720
 
-# Header buttons
-AUDIO_BTN_RECT = (600, 10, 780, 50)  # x1,y1,x2,y2
-MODE_BTN_RECT = (800, 10, 980, 50)
-WORD_CMD_BTN_RECT = (400, 10, 580, 50)
-WORD_CMD_PANEL_RECT = (40, 80, 960, 620)
+# Panel Rects (x, y, w, h)
+HEADER_HEIGHT = 70
+VIDEO_PANEL = (20, 90, 800, 450)
+TRANS_PANEL = (20, 560, 800, 140)
+HISTORY_PANEL = (840, 90, 420, 610)
+
+# Button Config (Header)
+# Added Theme button to the left of Audio
+BTN_THEME_RECT = (700, 20, 130, 40)
+BTN_AUDIO_RECT = (840, 20, 130, 40)
+BTN_MODE_RECT = (980, 20, 130, 40)
+BTN_CMD_RECT = (1120, 20, 130, 40)
+
+# --- THEMES (BGR Colors) ---
+THEMES = {
+    "dark": {
+        "bg": (42, 23, 15),          # #0f172a (Slate 950)
+        "panel_bg": (59, 41, 30),    # #1e293b (Slate 800)
+        "panel_header": (85, 65, 51),# #334155 (Slate 700)
+        "panel_border": (105, 85, 71),# #475569 (Slate 600)
+        
+        "text_main": (252, 250, 248), # #f8fafc (Slate 50)
+        "text_muted": (184, 163, 148),# #94a3b8 (Slate 400)
+        
+        "accent_primary": (248, 189, 56), # #38bdf8 (Sky 400) - Blue
+        "accent_success": (153, 211, 52), # #34d399 (Emerald 400) - Green
+        "accent_warning": (36, 191, 251), # #fbbf24 (Amber 400) - Yellow
+        "accent_danger": (113, 113, 248), # #f87171 (Red 400) - Red
+        
+        "overlay_bg": (30, 20, 10), # Dark overlay
+        "btn_active_text": (42, 23, 15) # Dark text on active button
+    },
+    "light": {
+        "bg": (245, 245, 245),       # Very Light Gray
+        "panel_bg": (255, 255, 255), # White
+        "panel_header": (230, 230, 230), # Light Gray Header
+        "panel_border": (200, 200, 200), # Medium Gray Border
+        
+        "text_main": (40, 40, 40),   # Dark Gray Text
+        "text_muted": (100, 100, 100), # Medium Gray Text
+        
+        "accent_primary": (200, 100, 0),   # Darker Blue for visibility
+        "accent_success": (50, 180, 50),   # Darker Green
+        "accent_warning": (0, 160, 220),   # Darker Amber
+        "accent_danger": (50, 50, 220),    # Red
+        
+        "overlay_bg": (240, 240, 240), # Light overlay
+        "btn_active_text": (255, 255, 255) # White text on active button
+    }
+}
+
+current_theme_name = "dark"
+COLORS = THEMES["dark"]
 
 # Timing Thresholds
 CHAR_PAUSE_THRESHOLD = 1.0  
@@ -362,51 +403,114 @@ pending_click = None
 
 def toggle_audio_mode():
     global current_audio_mode
-    if current_audio_mode == "TTS":
-        current_audio_mode = "MUTE"
-    elif current_audio_mode == "MUTE":
-        current_audio_mode = "BEEP"
-    else:
-        current_audio_mode = "TTS"
+    modes = ["TTS", "MUTE", "BEEP"]
+    current_audio_mode = modes[(modes.index(current_audio_mode) + 1) % len(modes)]
     print(f"Switched to {current_audio_mode} audio")
 
 def toggle_mode():
     global current_mode, idx_to_label, show_word_commands
-    if current_mode == "WORD":
-        current_mode = "CHAR"
-        idx_to_label = idx_to_char
-    elif current_mode == "CHAR":
-        current_mode = "BUFFER"
-        idx_to_label = idx_to_char
-    elif current_mode == "BUFFER":
-        current_mode = "LETTERS"
-        idx_to_label = idx_to_char
-    else:
-        current_mode = "WORD"
-        idx_to_label = idx_to_word
+    modes = ["WORD", "CHAR", "BUFFER", "LETTERS"]
+    current_mode = modes[(modes.index(current_mode) + 1) % len(modes)]
+    idx_to_label = idx_to_char if current_mode != "WORD" else idx_to_word
     if current_mode != "WORD":
         show_word_commands = False
     print(f"Switched to {current_mode} mode")
+
+# --- NEW UI HELPERS ---
+def toggle_theme():
+    global COLORS, current_theme_name
+    if current_theme_name == "dark":
+        current_theme_name = "light"
+        COLORS = THEMES["light"]
+    else:
+        current_theme_name = "dark"
+        COLORS = THEMES["dark"]
+    print(f"Switched to {current_theme_name} theme")
+
+def is_point_in_rect(point, rect):
+    px, py = point
+    rx, ry, rw, rh = rect
+    return rx <= px <= rx + rw and ry <= py <= ry + rh
+
+def draw_panel(canvas, rect, title=None, badge=None):
+    x, y, w, h = rect
+    # Panel BG
+    cv2.rectangle(canvas, (x, y), (x+w, y+h), COLORS["panel_bg"], -1)
+    # Panel Border
+    cv2.rectangle(canvas, (x, y), (x+w, y+h), COLORS["panel_border"], 1)
+    
+    if title:
+        # Header BG
+        header_h = 35
+        cv2.rectangle(canvas, (x, y), (x+w, y+header_h), COLORS["panel_header"], -1)
+        cv2.rectangle(canvas, (x, y), (x+w, y+header_h), COLORS["panel_border"], 1)
+        # Title Text
+        cv2.putText(canvas, title.upper(), (x+15, y+23), cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS["text_muted"], 1, cv2.LINE_AA)
+        
+        if badge:
+            # Badge pill
+            (tw, th), _ = cv2.getTextSize(badge, cv2.FONT_HERSHEY_SIMPLEX, 0.4, 1)
+            bx = x + w - tw - 25
+            by = y + 8
+            cv2.rectangle(canvas, (bx, by), (bx+tw+10, by+20), (50, 60, 20), -1) # Dark green pill
+            cv2.rectangle(canvas, (bx, by), (bx+tw+10, by+20), COLORS["accent_success"], 1)
+            cv2.putText(canvas, badge, (bx+5, by+14), cv2.FONT_HERSHEY_SIMPLEX, 0.4, COLORS["accent_success"], 1, cv2.LINE_AA)
+
+def draw_button(canvas, rect, text, active=False, color=None):
+    x, y, w, h = rect
+    
+    # Fill
+    if active:
+        bg = COLORS["accent_primary"]
+        txt_col = COLORS["btn_active_text"] # Adaptive text color
+        border_col = COLORS["accent_primary"]
+    else:
+        bg = COLORS["bg"]
+        txt_col = COLORS["text_muted"]
+        border_col = COLORS["panel_border"]
+    
+    if color: # Override color for specific modes
+        bg = color
+        txt_col = COLORS["btn_active_text"]
+    
+    cv2.rectangle(canvas, (x, y), (x+w, y+h), bg, -1)
+    cv2.rectangle(canvas, (x, y), (x+w, y+h), border_col, 1)
+    
+    # Text
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    (tw, th), _ = cv2.getTextSize(text, font, 0.5, 1)
+    tx = x + (w - tw) // 2
+    ty = y + (h + th) // 2
+    cv2.putText(canvas, text, (tx, ty), font, 0.5, txt_col, 1, cv2.LINE_AA)
+
+def draw_progress_bar(canvas, rect, progress, threshold=0.52):
+    x, y, w, h = rect
+    # Track
+    cv2.rectangle(canvas, (x, y), (x+w, y+h), (70, 70, 70), -1)
+    
+    # Fill
+    fill_w = int(w * min(progress, 1.0))
+    fill_col = COLORS["accent_primary"]
+    if progress > threshold:
+        fill_col = COLORS["accent_warning"] # Amber for dash
+        
+    if fill_w > 0:
+        cv2.rectangle(canvas, (x, y), (x+fill_w, y+h), fill_col, -1)
+    
+    # Threshold marker
+    marker_x = x + int(w * threshold)
+    cv2.line(canvas, (marker_x, y-2), (marker_x, y+h+2), (0,0,0), 2)
 
 def mouse_callback(event, x, y, flags, param):
     global pending_click, show_word_commands
     if event == cv2.EVENT_LBUTTONDOWN:
         pending_click = (x, y)
-        ax1, ay1, ax2, ay2 = AUDIO_BTN_RECT
-        mx1, my1, mx2, my2 = MODE_BTN_RECT
-        wx1, wy1, wx2, wy2 = WORD_CMD_BTN_RECT
-
-        if ax1 <= x <= ax2 and ay1 <= y <= ay2:
-            toggle_audio_mode()
-            return
-
-        if mx1 <= x <= mx2 and my1 <= y <= my2:
-            toggle_mode()
-
-
-        if current_mode == "WORD" and wx1 <= x <= wx2 and wy1 <= y <= wy2:
+        if is_point_in_rect((x, y), BTN_THEME_RECT): toggle_theme()
+        elif is_point_in_rect((x, y), BTN_AUDIO_RECT): toggle_audio_mode()
+        elif is_point_in_rect((x, y), BTN_MODE_RECT): toggle_mode()
+        elif current_mode == "WORD" and is_point_in_rect((x, y), BTN_CMD_RECT): 
             show_word_commands = not show_word_commands
-            return
+
 # Load models with flexible provider selection
 def create_session(path):
     try:
@@ -648,8 +752,9 @@ def main():
     
     print("System Ready! SAPI TTS & Timers Enabled.")
     
-    cv2.namedWindow("LSTM Morse Decoder with TTS")
-    cv2.setMouseCallback("LSTM Morse Decoder with TTS", mouse_callback)
+    cv2.namedWindow("Blink Morse Decoder", cv2.WINDOW_NORMAL)
+    cv2.resizeWindow("Blink Morse Decoder", WINDOW_WIDTH, WINDOW_HEIGHT)
+    cv2.setMouseCallback("Blink Morse Decoder", mouse_callback)
 
     while True:
         if not cap.isOpened():
@@ -660,7 +765,7 @@ def main():
 
         ret, frame = cap.read()
         if not ret: break
-        h, w, _ = frame.shape
+        h_frame, w_frame, _ = frame.shape
         rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         results = face_mesh.process(rgb)
         
@@ -704,7 +809,7 @@ def main():
                 if not head_backspace_armed and turn_val < HEAD_BACKSPACE_YAW_RESET:
                     head_backspace_armed = True
 
-            crop = get_eye_crop(frame, landmarks, w, h)
+            crop = get_eye_crop(frame, landmarks, w_frame, h_frame)
             
             if crop.size != 0:
                 # 1. Run CNN
@@ -926,197 +1031,201 @@ def main():
         # Human-readable transcript
         transcript_text = " ".join(transcript_words + ([current_word] if current_word else []))
 
-        # --- UI DRAWING ---
-        # Create Canvas
-        canvas = np.ones((WINDOW_HEIGHT, WINDOW_WIDTH, 3), dtype=np.uint8) * 240 # Light gray background
-        row_hitboxes = []
+        # --- DRAWING THE NEW UI ---
+        canvas = np.zeros((WINDOW_HEIGHT, WINDOW_WIDTH, 3), dtype=np.uint8)
+        canvas[:] = COLORS["bg"]
 
-        # Header
-        cv2.rectangle(canvas, (0, 0), (WINDOW_WIDTH, 60), (200, 200, 200), -1)
-        header_text = "GROUP 2 WIP"
+        # 1. Header
+        cv2.rectangle(canvas, (0, 0), (WINDOW_WIDTH, HEADER_HEIGHT), COLORS["panel_bg"], -1)
+        cv2.rectangle(canvas, (0, 0), (WINDOW_WIDTH, HEADER_HEIGHT), COLORS["panel_border"], 1)
+        
+        cv2.putText(canvas, "BLINK MORSE DECODER", (30, 35), cv2.FONT_HERSHEY_SIMPLEX, 0.8, COLORS["text_main"], 2, cv2.LINE_AA)
+        cv2.putText(canvas, "Thesis by Group 2 BSCS 4A SY 2025-2026", (30, 55), cv2.FONT_HERSHEY_SIMPLEX, 0.45, COLORS["text_muted"], 1, cv2.LINE_AA)
+        
         if EVAL_PROMPT_MODE and eval_prompts:
-            header_text = f"PROMPT: {eval_prompts[eval_prompt_idx]}"
-        cv2.putText(canvas, header_text[:40], (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 0), 2)
+            prompt_text = f"PROMPT: {eval_prompts[eval_prompt_idx]}"
+            cv2.putText(canvas, prompt_text, (350, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.6, COLORS["accent_warning"], 1, cv2.LINE_AA)
+
+        # Buttons
+        draw_button(canvas, BTN_THEME_RECT, f"THEME: {current_theme_name.upper()}", active=False)
+        draw_button(canvas, BTN_AUDIO_RECT, f"AUDIO: {current_audio_mode}", active=(current_audio_mode=="TTS"))
         
-        # Audio Button
-        audio_color = (200, 200, 200)
-        if current_audio_mode == "TTS":
-            audio_color = (100, 200, 100)
-        elif current_audio_mode == "MUTE":
-            audio_color = (120, 120, 120)
+        # Mode Button Color Logic
+        mode_active = True
+        mode_col = None
+        if current_mode == "WORD": mode_col = COLORS["accent_primary"]
+        elif current_mode == "CHAR": mode_col = COLORS["accent_warning"]
+        elif current_mode == "BUFFER": mode_col = COLORS["accent_success"]
+        draw_button(canvas, BTN_MODE_RECT, current_mode, active=mode_active, color=mode_col)
+        
+        cmd_active = (current_mode == "WORD" and show_word_commands)
+        draw_button(canvas, BTN_CMD_RECT, "LIBRARY", active=cmd_active)
+
+        # 2. Video Panel
+        vx, vy, vw, vh = VIDEO_PANEL
+        draw_panel(canvas, VIDEO_PANEL, "Live Feed")
+        
+        # Fit Video - STRETCH TO FILL
+        display_w = vw - 4
+        display_h = vh - 38 # Account for header (35) and borders
+        
+        res_frame = cv2.resize(frame, (display_w, display_h))
+        
+        # Overlay eye state on video pixels
+        if eye_state == "CLOSED":
+            cv2.rectangle(res_frame, (0,0), (display_w, display_h), (0,0,255), 3) 
+        
+        # Position just below header
+        dy = vy + 36
+        dx = vx + 2
+        canvas[dy:dy+display_h, dx:dx+display_w] = res_frame
+
+        # HUD Overlay on top of video area
+        state_col = COLORS["accent_success"] if eye_state == "OPEN" else COLORS["accent_danger"]
+        
+        # Draw background for HUD pill
+        cv2.rectangle(canvas, (vx+15, vy+50), (vx+130, vy+80), COLORS["overlay_bg"], -1)
+        cv2.putText(canvas, f"STATE: {eye_state}", (vx+20, vy+72), cv2.FONT_HERSHEY_SIMPLEX, 0.5, state_col, 1, cv2.LINE_AA)
+
+        # Blink Meter (Bottom of video panel)
+        meter_w = 300
+        meter_h = 8
+        mx = vx + (vw - meter_w) // 2
+        my = vy + vh - 25
+        
+        # Determine meter value
+        meter_val = 0.0
+        if is_closed:
+             meter_val = min((now - closed_start_time)/1.0, 1.0)
         else:
-            audio_color = (200, 160, 80)
+             # Decay effect for visualization or just show 0
+             meter_val = 0.0
+        
+        draw_progress_bar(canvas, (mx, my, meter_w, meter_h), meter_val)
+        dur_txt = f"{(now - closed_start_time):.2f}s" if is_closed else "0.00s"
+        cv2.putText(canvas, dur_txt, (mx + meter_w//2 - 20, my - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.4, COLORS["text_main"], 1, cv2.LINE_AA)
 
-        ax1, ay1, ax2, ay2 = AUDIO_BTN_RECT
-        cv2.rectangle(canvas, (ax1, ay1), (ax2, ay2), audio_color, -1)
-        cv2.rectangle(canvas, (ax1, ay1), (ax2, ay2), (0, 0, 0), 1)
-        cv2.putText(canvas, f"AUDIO: {current_audio_mode}", (ax1 + 10, ay2 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 2)
-
-        # Word command button (only active in WORD mode)
-        wx1, wy1, wx2, wy2 = WORD_CMD_BTN_RECT
-        cmd_color = (160, 160, 160)
-        cmd_label = "Show Word Command"
-        if current_mode == "WORD":
-            cmd_color = (170, 210, 240) if show_word_commands else (180, 200, 220)
-        else:
-            cmd_label = "Word Mode Only"
-        cv2.rectangle(canvas, (wx1, wy1), (wx2, wy2), cmd_color, -1)
-        cv2.rectangle(canvas, (wx1, wy1), (wx2, wy2), (0, 0, 0), 1)
-        cv2.putText(canvas, cmd_label, (wx1 + 8, wy2 - 12), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 0), 2)
-
-        # Mode Button
-        btn_color = (100, 200, 100) if current_mode == "WORD" else (100, 100, 200)
-        mx1, my1, mx2, my2 = MODE_BTN_RECT
-        cv2.rectangle(canvas, (mx1, my1), (mx2, my2), btn_color, -1)
-        cv2.rectangle(canvas, (mx1, my1), (mx2, my2), (0, 0, 0), 1)
-        cv2.putText(canvas, f"MODE: {current_mode}", (mx1 + 10, my2 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 2)
-
-        # 1. Live Video Feed
-        vx, vy = VIDEO_POS
+        # 3. Translation Panel
+        tx, ty, tw, th = TRANS_PANEL
+        draw_panel(canvas, TRANS_PANEL, "Input Buffer", badge="Active")
         
-        # Calculate aspect-ratio preserving resize
-        h_frame, w_frame = frame.shape[:2]
-        scale = min(VIDEO_WIDTH / w_frame, VIDEO_HEIGHT / h_frame)
-        new_w = int(w_frame * scale)
-        new_h = int(h_frame * scale)
-        
-        frame_resized = cv2.resize(frame, (new_w, new_h))
-        
-        # Draw overlays on the video feed
-        color = (0, 0, 255) if eye_state == "CLOSED" else (0, 255, 0)
-        cv2.putText(frame_resized, f"Eye: {eye_state}", (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
-        blink_text = "Blink: --" if last_blink_duration <= 0 else f"Blink: {last_blink_duration:.2f}s"
-        cv2.putText(frame_resized, blink_text, (20, 75), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (80, 80, 80), 2)
-        
-        # Center the video in the box
-        y_offset = vy + (VIDEO_HEIGHT - new_h) // 2
-        x_offset = vx + (VIDEO_WIDTH - new_w) // 2
-        
-        # Draw black background for video box
-        cv2.rectangle(canvas, (vx, vy), (vx+VIDEO_WIDTH, vy+VIDEO_HEIGHT), (0, 0, 0), -1)
-        
-        # Place video on canvas
-        canvas[y_offset:y_offset+new_h, x_offset:x_offset+new_w] = frame_resized
-        cv2.rectangle(canvas, (vx, vy), (vx+VIDEO_WIDTH, vy+VIDEO_HEIGHT), (0, 0, 0), 2)
-        cv2.putText(canvas, "Live Video Feed", (vx + 10, vy - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 1)
-
-        # 2. Translation Field (Current Sequence)
-        tx, ty = TRANS_FIELD_POS
-        tw, th = TRANS_FIELD_SIZE
-        cv2.rectangle(canvas, (tx, ty), (tx+tw, ty+th), (255, 255, 255), -1)
-        cv2.rectangle(canvas, (tx, ty), (tx+tw, ty+th), (0, 0, 0), 1)
-        # Label inside the box, smaller
-        label_text = "Translation Field"
+        # Sequence String
+        seq_str = ""
         if current_mode == "BUFFER":
-            label_text = "Buffer Mode (hold 2s to decode)"
-        cv2.putText(canvas, label_text, (tx + 5, ty + 15), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (100, 100, 100), 1)
+             parts = buffered_tokens.copy()
+             if current_morse_token: parts.append(current_morse_token)
+             seq_str = " ".join(parts)
+        else:
+             for d in current_blink_sequence:
+                 seq_str += " _ " if d >= DOT_DASH_THRESHOLD else " . "
         
-        # Visualize current blink sequence as dots/dashes
-        if current_mode == "BUFFER":
-            seq_parts = buffered_tokens.copy()
-            if current_morse_token:
-                seq_parts.append(current_morse_token)
-            seq_str = " ".join(seq_parts) if seq_parts else "(Decoding...)"
-        else:
-            seq_str = ""
-            for dur in current_blink_sequence:
-                if dur < DOT_DASH_THRESHOLD: seq_str += "."
-                else: seq_str += "-"
+        cv2.putText(canvas, seq_str, (tx+20, ty+70), cv2.FONT_HERSHEY_SIMPLEX, 0.6, COLORS["text_muted"], 1, cv2.LINE_AA)
+        
+        # Current Word/Text
+        full_line = " ".join(transcript_words[-4:] + ([current_word] if current_word else []))
+        if not full_line: full_line = "_"
+        cv2.putText(canvas, full_line, (tx+20, ty+110), cv2.FONT_HERSHEY_SIMPLEX, 1.2, COLORS["text_main"], 2, cv2.LINE_AA)
 
-        # Show assembled text + current blink pattern
-        wrapped = textwrap.wrap(transcript_text, width=34)
-        if wrapped:
-            cv2.putText(canvas, wrapped[-1], (tx + 10, ty + 55), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 0), 2)
-        else:
-            cv2.putText(canvas, "(waiting)", (tx + 10, ty + 55), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (150, 150, 150), 2)
+        # 4. History Panel
+        hx, hy, hw, hh = HISTORY_PANEL
+        draw_panel(canvas, HISTORY_PANEL, "Session Log")
+        
+        # Draw list
+        visible_hist = (transcript_words + ([current_word] if current_word else []))[-18:]
+        start_y = hy + 60
+        for i, w in enumerate(visible_hist):
+            col = COLORS["text_muted"]
+            if i == len(visible_hist)-1 and current_word: 
+                col = COLORS["accent_primary"]
+                # Active highlight
+                cv2.rectangle(canvas, (hx+2, start_y-20), (hx+hw-2, start_y+10), COLORS["overlay_bg"], -1)
+                cv2.rectangle(canvas, (hx, start_y-20), (hx+3, start_y+10), COLORS["accent_primary"], -1)
+            
+            ts = datetime.fromtimestamp(now).strftime("%H:%M:%S") # Mock time for items just for visuals, or track real time
+            cv2.putText(canvas, f"{w}", (hx+30, start_y), cv2.FONT_HERSHEY_SIMPLEX, 0.6, col, 1, cv2.LINE_AA)
+            start_y += 30
 
-        cv2.putText(canvas, seq_str, (tx + 10, ty + 90), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (50, 50, 50), 2)
+        # 5. Command Overlay
+        if show_word_commands and current_mode == "WORD":
+            # Darken bg
+            overlay = canvas.copy()
+            cv2.rectangle(overlay, (0,0), (WINDOW_WIDTH, WINDOW_HEIGHT), COLORS["overlay_bg"], -1)
+            cv2.addWeighted(overlay, 0.7, canvas, 0.3, 0, canvas)
+            
+            # Draw Centered Modal
+            mw, mh = 800, 600
+            mx = (WINDOW_WIDTH - mw) // 2
+            my = (WINDOW_HEIGHT - mh) // 2
+            
+            cv2.rectangle(canvas, (mx, my), (mx+mw, my+mh), COLORS["panel_bg"], -1)
+            cv2.rectangle(canvas, (mx, my), (mx+mw, my+mh), COLORS["panel_border"], 1)
+            
+            # Header
+            cv2.rectangle(canvas, (mx, my), (mx+mw, my+50), COLORS["panel_header"], -1)
+            cv2.putText(canvas, "COMMAND LIBRARY", (mx+20, my+35), cv2.FONT_HERSHEY_SIMPLEX, 0.7, COLORS["text_main"], 2)
+            cv2.putText(canvas, "Click to edit. ESC to close.", (mx+mw-250, my+35), cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS["text_muted"], 1)
+            
+            # Grid
+            row_hitboxes = []
+            cols = 3
+            rows = 17
+            cw = (mw - 40) // cols
+            rh = 30
+            
+            cmds = sorted(WORD_COMMAND_CODES.items())
+            for i, (idx, code) in enumerate(cmds):
+                c = i // rows
+                r = i % rows
+                
+                bx = mx + 20 + c * cw
+                by = my + 70 + r * rh
+                
+                w_txt = idx_to_word.get(idx, "[Empty]")
+                
+                # Highlight
+                is_sel = (selected_command_idx == idx)
+                txt_col = COLORS["accent_primary"] if is_sel else COLORS["text_muted"]
+                if is_sel:
+                    # Highlight box
+                    cv2.rectangle(canvas, (bx, by-20), (bx+cw-10, by+5), COLORS["overlay_bg"], -1)
+                
+                disp = f"{idx:02d} {code:6s} {w_txt}"
+                cv2.putText(canvas, disp, (bx+5, by), cv2.FONT_HERSHEY_SIMPLEX, 0.45, txt_col, 1, cv2.LINE_AA)
+                
+                row_hitboxes.append((idx, (bx, by-20, cw-10, 25)))
 
-        # 3. Translation History
-        hx, hy = HISTORY_POS
-        hw, hh = HISTORY_SIZE
-        cv2.rectangle(canvas, (hx, hy), (hx+hw, hy+hh), (230, 230, 230), -1)
-        cv2.rectangle(canvas, (hx, hy), (hx+hw, hy+hh), (0, 0, 0), 1)
-        cv2.putText(canvas, "Translation History", (hx + 10, hy + 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2)
-        cv2.line(canvas, (hx, hy+40), (hx+hw, hy+40), (0,0,0), 1)
+            if editing_active:
+                cv2.rectangle(canvas, (mx, my+mh-50), (mx+mw, my+mh), COLORS["overlay_bg"], -1)
+                cv2.putText(canvas, f"EDITING ID {selected_command_idx}: {edit_buffer}_", (mx+20, my+mh-15), cv2.FONT_HERSHEY_SIMPLEX, 0.7, COLORS["accent_warning"], 2)
 
-        # Draw the decoded history (last 15 entries)
-        y_offset = hy + 70
-        # Show most recent words (and partial current word)
-        visible_history = (transcript_words + ([current_word] if current_word else []))[-15:]
-        for item in visible_history:
-            cv2.putText(canvas, item, (hx+10, y_offset), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 2)
-            y_offset += 35
-
-        # Word command overlay (WORD mode only)
-        if current_mode == "WORD" and show_word_commands:
-            px1, py1, px2, py2 = WORD_CMD_PANEL_RECT
-            cv2.rectangle(canvas, (px1 - 4, py1 - 4), (px2 + 4, py2 + 4), (80, 80, 80), -1)
-            cv2.rectangle(canvas, (px1, py1), (px2, py2), (255, 255, 255), -1)
-            cv2.rectangle(canvas, (px1, py1), (px2, py2), (0, 0, 0), 2)
-
-            cv2.putText(canvas, "Word Commands (click a row to edit the word)", (px1 + 12, py1 + 28), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (0, 0, 0), 2)
-            cv2.putText(canvas, "Morse codes are fixed; type to change the word. Enter=save, Esc=cancel.", (px1 + 12, py1 + 52), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (60, 60, 60), 1)
-
-            commands = []
-            for idx in sorted(WORD_COMMAND_CODES.keys()):
-                commands.append({
-                    "idx": idx,
-                    "code": WORD_COMMAND_CODES[idx],
-                    "word": idx_to_word.get(idx, f"[{idx}]")
-                })
-
-            rows_per_col = 25
-            row_height = 18
-            col_width = (px2 - px1 - 40) // 2
-            start_y = py1 + 70
-
-            for i, cmd in enumerate(commands):
-                col = i // rows_per_col
-                row = i % rows_per_col
-                x = px1 + 20 + col * col_width
-                y = start_y + row * row_height
-                row_rect = (x, y - 16, x + col_width - 10, y + 4)
-                if selected_command_idx == cmd["idx"]:
-                    cv2.rectangle(canvas, (row_rect[0], row_rect[1]), (row_rect[2], row_rect[3]), (210, 230, 255), -1)
-                cv2.putText(canvas, f"{cmd['idx']:02d}  {cmd['code']:7s}  {cmd['word']}", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 0), 1)
-                row_hitboxes.append((cmd["idx"], row_rect))
-
-            if editing_active and selected_command_idx is not None:
-                cv2.putText(canvas, f"Editing {selected_command_idx}: {edit_buffer}", (px1 + 12, py2 - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 180), 2)
-
-        if pending_click is not None:
+        # Handle Overlay Clicks
+        if pending_click:
             px, py = pending_click
             pending_click = None
-            if current_mode == "WORD" and show_word_commands:
-                for idx_val, rect in row_hitboxes:
-                    x1, y1, x2, y2 = rect
-                    if x1 <= px <= x2 and y1 <= py <= y2:
-                        selected_command_idx = idx_val
-                        edit_buffer = idx_to_word.get(idx_val, "")
+            if show_word_commands and current_mode == "WORD":
+                for idx, r in row_hitboxes:
+                    rx, ry, rw, rh = r
+                    if rx <= px <= rx+rw and ry <= py <= ry+rh:
+                        selected_command_idx = idx
+                        edit_buffer = idx_to_word.get(idx, "")
                         editing_active = True
-                        break
-
-        cv2.imshow("LSTM Morse Decoder with TTS", canvas)
+        
+        cv2.imshow("Blink Morse Decoder", canvas)
         
         key = cv2.waitKey(1) & 0xFF
         if key == ord('q'): break
-
-        if editing_active and current_mode == "WORD" and show_word_commands:
-            if key in (8, 127):
-                edit_buffer = edit_buffer[:-1]
-                continue
-            if key in (13, 10):
+        
+        # Typing logic
+        if editing_active and show_word_commands:
+            if key == 27: editing_active = False
+            elif key == 13: # Enter
                 commit_word_edit()
-                continue
-            if key == 27:
-                editing_active = False
-                continue
-            if 32 <= key <= 126:
-                edit_buffer += chr(key)
-                continue
-        # Backspace support: Backspace key is commonly 8 (sometimes 127). 'b' is a fallback.
-        if key in (8, 127) or key == ord('b'):
+            elif key in (8, 127): edit_buffer = edit_buffer[:-1]
+            elif 32 <= key <= 126: edit_buffer += chr(key)
+            continue
+            
+        # Backspace manual
+        if key in (8, 127):
             handle_backspace(now)
             continue
         if key == ord('c'):
